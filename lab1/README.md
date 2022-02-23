@@ -31,7 +31,10 @@ The task given to us was to create a data analysis work stream for the given CSV
 There are no dependencies required for this project. To run this Lab:
 
 1. Clone the repo into your local system. 
-2. Traverse into the  `lab1` directory (make sure that your base be this directory)
-3. Run  `make` 
+2. Run this code 
+> `$ git submodule update --init --recursive`
+- When you clone the repo, the submodule fails to clone. An extra command is necessary to bring the submodule to your computer.
+4. Traverse into the  `lab1` directory (make sure that your base be this directory)
+5. Run  `make` 
 
 
