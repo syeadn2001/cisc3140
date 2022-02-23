@@ -35,6 +35,6 @@ There are no dependencies required for this project. To run this Lab:
 > `git submodule update --init --recursive`
 - When you clone the repo, the submodule fails to clone. An extra command is necessary to bring the submodule to your computer.
 4. Traverse into the  `lab1` directory (make sure that your base be this directory)
-5. Run  `make` 
+5. Run this code: `make` 
 
 
