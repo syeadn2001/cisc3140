@@ -1,15 +1,23 @@
 BEGIN{
-   FS = ","
+   printf "%-10s %-10s %-10s %-10s %-14s %-10s\n\n", "ranking", "points", "car_id", "year", "car make", "car model" > "part1"
+   rank = 1
+}
+
+
+#printf "%-10s %-10s %-10s %-10s %-14s %-10s\n\n", "ranking", "points", "car_id", "year", "car make", "car model" > "sorted"
+
+NR==1{
+   printf "%-10s %-10s %-10s %-10s %-14s %-10s\n", rank, $1, $2, $3, $4, $5 >> "part1"
+   prevPoints = $1
 }
 
 
 NR>1{
-   sum = 0 
-   for(i = 8; i<=NF; i++){
-      sum +=$i
-   } 
+   if(prevPoints!=$1){
+	rank++
+   }
    
-   printf "%-10i %-10i %-10i %-14s %-10s\n", sum, $7, $4, $5, $6 > "unsorted"
+   printf "%-10s %-10s %-10s %-10s %-14s %-10s\n", rank, $1, $2, $3, $4, $5 >> "part1"
 
 }
 
