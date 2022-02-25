@@ -10,31 +10,31 @@ lab1:
 	awk -f topThree.awk part1
 	#Creating header for part2 of the lab
 	awk 'BEGIN{printf "%-10s %-10s %-10s %-10s %-14s %-10s\n\n", "ranking", "points", "car_id", "year", "car make", "car model" > "part2"}'
-	#Copying top 3 records from the car tables created previously
-	awk 'NR<4{print $0 >> "part2"}' cars/Acura
-	awk 'NR<4{print $0 >> "part2"}' cars/Audi
-	awk 'NR<4{print $0 >> "part2"}' cars/Benz
-	awk 'NR<4{print $0 >> "part2"}' cars/Bmw
-	awk 'NR<4{print $0 >> "part2"}' cars/Chevy
-	awk 'NR<4{print $0 >> "part2"}' cars/Chrystler
-	awk 'NR<4{print $0 >> "part2"}' cars/Civic
-	awk 'NR<4{print $0 >> "part2"}' cars/Dodge
-	awk 'NR<4{print $0 >> "part2"}' cars/Ford
-	awk 'NR<4{print $0 >> "part2"}' cars/Honda
-	awk 'NR<4{print $0 >> "part2"}' cars/Hyundai
-	awk 'NR<4{print $0 >> "part2"}' cars/Infiniti
-	awk 'NR<4{print $0 >> "part2"}' cars/Infinity
-	awk 'NR<4{print $0 >> "part2"}' cars/Jeep
-	awk 'NR<4{print $0 >> "part2"}' cars/Lexus
-	awk 'NR<4{print $0 >> "part2"}' cars/Mazda
-	awk 'NR<4{print $0 >> "part2"}' cars/Mercedes
-	awk 'NR<4{print $0 >> "part2"}' cars/Mitsu
-	awk 'NR<4{print $0 >> "part2"}' cars/Mitsub
-	awk 'NR<4{print $0 >> "part2"}' cars/Nissan
-	awk 'NR<4{print $0 >> "part2"}' cars/Scion
-	awk 'NR<4{print $0 >> "part2"}' cars/Subaru
-	awk 'NR<4{print $0 >> "part2"}' cars/Toyota
-	awk 'NR<4{print $0 >> "part2"}'  cars/Volkswagen
-	awk 'NR<4{print $0 >> "part2"}' cars/Volvo	
+	@#Copying top 3 records from the car tables created previously
+	@awk 'NR<4{print $0 >> "part2"}' cars/Acura
+	@awk 'NR<4{print $0 >> "part2"}' cars/Audi
+	@awk 'NR<4{print $0 >> "part2"}' cars/Benz
+	@awk 'NR<4{print $0 >> "part2"}' cars/Bmw
+	@awk 'NR<4{print $0 >> "part2"}' cars/Chevy
+	@awk 'NR<4{print $0 >> "part2"}' cars/Chrystler
+	@awk 'NR<4{print $0 >> "part2"}' cars/Civic
+	@awk 'NR<4{print $0 >> "part2"}' cars/Dodge
+	@awk 'NR<4{print $0 >> "part2"}' cars/Ford
+	@awk 'NR<4{print $0 >> "part2"}' cars/Honda
+	@awk 'NR<4{print $0 >> "part2"}' cars/Hyundai
+	@awk 'NR<4{print $0 >> "part2"}' cars/Infiniti
+	@awk 'NR<4{print $0 >> "part2"}' cars/Infinity
+	@awk 'NR<4{print $0 >> "part2"}' cars/Jeep
+	@awk 'NR<4{print $0 >> "part2"}' cars/Lexus
+	@awk 'NR<4{print $0 >> "part2"}' cars/Mazda
+	@awk 'NR<4{print $0 >> "part2"}' cars/Mercedes
+	@awk 'NR<4{print $0 >> "part2"}' cars/Mitsu
+	@awk 'NR<4{print $0 >> "part2"}' cars/Mitsub
+	@awk 'NR<4{print $0 >> "part2"}' cars/Nissan
+	@awk 'NR<4{print $0 >> "part2"}' cars/Scion
+	@awk 'NR<4{print $0 >> "part2"}' cars/Subaru
+	@awk 'NR<4{print $0 >> "part2"}' cars/Toyota
+	@awk 'NR<4{print $0 >> "part2"}'  cars/Volkswagen
+	@awk 'NR<4{print $0 >> "part2"}' cars/Volvo	
 
 
