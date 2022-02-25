@@ -1,9 +1,6 @@
-lab1: init	
+lab1:	
+	git submodule update --init --recursive
 	+$(MAKE) -C lab_1
 
-
-init: 
-	git submodule update --init -recursive
-	touch init
 
 
