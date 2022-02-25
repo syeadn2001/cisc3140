@@ -1,4 +1,4 @@
-lab1:
+all:
 
 	#Adds the total points column to new data and puts it in "unsorted.txt"  
 	awk -f newPoints.awk data_lab1/data.csv
