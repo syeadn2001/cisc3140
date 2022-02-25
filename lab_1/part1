@@ -52,8 +52,8 @@ ranking    points     car_id     year       car make       car model
 50         54         137        2017       Ford           Focus     
 51         52         225        2016       Acura          TLX       
 52         52         134        2013       Subaru         WRX       
-53         50         5          2003       Acura          Rsx       
-54         50         51         2015       Subaru         WRX       
+53         50         51         2015       Subaru         WRX       
+54         50         5          2003       Acura          Rsx       
 55         50         189        2012       Toyota         Fj        
 56         50         170        2014       Chevy          Cruze     
 57         48         88         2008       Honda          Accord    
@@ -104,8 +104,8 @@ ranking    points     car_id     year       car make       car model
 102        26         242        2014       Nissan         Maxima    
 103        26         219        2016       Ford           Focus     
 104        26         187        2007       Subaru         Legacy    
-105        26         14         1990       Nissan         Skyline   
-106        26         141        1993       Mazda          Miata     
+105        26         141        1993       Mazda          Miata     
+106        26         14         1990       Nissan         Skyline   
 107        26         114        2010       Volkswagen     Gti       
 108        24         81         2016       Volkswagen     GTI       
 109        24         241        2007       Toyota         Camry     
