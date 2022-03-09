@@ -1,0 +1,259 @@
+Script started on Tue 08 Mar 2022 07:22:52 PM EST
+]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[?1034h[Adnaan.Syed20@sol26 lab_2]$ sqlite3 carContestLab.db 
+SQLite version 3.7.17 2013-05-20 00:56:22
+Enter ".help" for instructions
+Enter SQL statements terminated with a ";"
+[?1034hsqlite> .tables
+Cars            allContestData  contestData     csvData       
+sqlite> SELECT [K[K[K[K[K[K[Kinsert into Cars [K(Car_ID, Year, Make, Model [K, Nae[Kme [K, Eai[K[Kmail)
+   ...> SELECT c[KCar_ID, ye[K[KYear, Make, Model [K, Name, Email
+   ...> FROM csvData
+   ...> ;
+sqlite> .TAB[K[K[K[Ks[KSELECT * FROM Cars LIMIT 5;
+48|2015|Acura|TLX|Hernando|honoland13@japanpost.jp
+124|2015|Jeep|Wrangler|Noel|nlighterness2q@umn.edu
+222|2015|Lexus|Is250|Edan|eguest47@microsoft.com
+207|1993|Honda|Civic eG|Hieronymus|hchilley40@fema.gov
+167|2016|Ford|Mystang|Nickolas|nnowick3d@tuttocitta.it
+sqlite> .mode column
+sqlite> .mode column[C[C[C[C[C[C[C[CSELECT * FROM Cars LIMIT 5;
+48          2015        Acura       TLX         Hernando    honoland13@japanpost.jp
+124         2015        Jeep        Wrangler    Noel        nlighterness2q@umn.edu 
+222         2015        Lexus       Is250       Edan        eguest47@microsoft.com 
+207         1993        Honda       Civic eG    Hieronymus  hchilley40@fema.gov    
+167         2016        Ford        Mystang     Nickolas    nnowick3d@tuttocitta.it
+sqlite> .hear[Kders on
+sqlite> .headers on[C[C[C[C[C[C[C[CSELECT * FROM Cars LIMIT 5;
+Car_ID      Year        Make        Model       Name        Email                  
+----------  ----------  ----------  ----------  ----------  -----------------------
+48          2015        Acura       TLX         Hernando    honoland13@japanpost.jp
+124         2015        Jeep        Wrangler    Noel        nlighterness2q@umn.edu 
+222         2015        Lexus       Is250       Edan        eguest47@microsoft.com 
+207         1993        Honda       Civic eG    Hieronymus  hchilley40@fema.gov    
+167         2016        Ford        Mystang     Nickolas    nnowick3d@tuttocitta.it
+sqlite> SELECT COUNT(*) FROM Cars
+   ...> ;
+COUNT(*)  
+----------
+167       
+sqlite> ;SELECT COUNT(*) FROM Cars[K[K[K[K[K c[Kpo[K[KcsvData
+   ...> ;
+COUNT(*)  
+----------
+167       
+sqlite> -- [K[K[K--[K[KCREATE TABLE [K[K[K[K[K[K[K[K[K[K[K[K[KCREATE TABLE Judges(
+   ...> Timestamp DATETIME,
+   ...> Judge_ID TEXT,
+   ...> Judge_Name TEXT
+   ...> );
+sqlite> ls[K[Kls[K[KINSERT INTO Jus[Kdges[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KINSERT INTO Judges (Timestamp, Judge_ID, Judge_Name) SELECT Timestamp, Judge_ID, Judge_Name
+   ...> INSERT INTO Judges (Timestamp, Judge_ID, Judge_Name) SELECT Timestamp, Judge_ID, Judge_Name[C[C[C[C[C[C[C[C[KFROM dataCsv;
+Error: no such table: dataCsv
+sqlite> FROM dataCsv;[C[C[C[C[C[C[C[CINSERT INTO Judges (Timestamp, Judge_ID, Judge_Name) SELECT Timestamp, Judge_ID, Judge_Name
+   ...> FROM csvData;
+sqlite> FROM csvData;[C[C[C[C[C[C[C[CINSERT INTO Judges (Timestamp, Judge_ID, Judge_Name) SELECT Timestamp, Judge_ID, Judge_Name[C[C[C[C[C[C[C[CFROM dataCsv;[K[C[C[C[C[C[C[C[CINSERT INTO Judges (Timestamp, Judge_ID, Judge_Name) SELECT Timestamp, Judge_ID, Judge_Name[C[C[C[C[C[C[C[C);[KJudge_Name TEXT[1PID TEXT,[C[C[C[C[C[C[C[CTimestamp DATETIME,[C[C[C[C[C[C[C[CCREATE TABLE Judges([C[C[C[C[C[C[C[C;[KSELECT COUNT(*) FROM csvData[C[C[C[C[C[C[C[C;[KSELECT COUNT(*) FROM csvData[K[K[K[K[K[K[K[K Judges;
+COUNT(*)  
+----------
+167       
+sqlite> SELECT COUNT(*) FROM Judges;[C[C[C[C[C[C[C[C[15PFROM csvData;[C[C[C[C[C[C[C[CINSERT INTO Judges (Timestamp, Judge_ID, Judge_Name) SELECT Timestamp, Judge_ID, Judge_Name[C[C[C[C[C[C[C[CFROM dataCsv;[K[C[C[C[C[C[C[C[CINSERT INTO Judges (Timestamp, Judge_ID, Judge_Name) SELECT Timestamp, Judge_ID, Judge_Name[C[C[C[C[C[C[C[C);[KJudge_Name TEXT[1PID TEXT,[C[C[C[C[C[C[C[CTimestamp DATETIME,[C[C[C[C[C[C[C[CCREATE TABLE Judges([C[C[C[C[C[C[C[C;[KSELECT COUNT(*) FROM csvData[C[C[C[C[C[C[C[C;[KSELECT COUNT(*) FROM Cars[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C* FROM Cars LIMIT 5;[1P[1P[1P[1P[C[1P[C[1@ [1@J[1@u[1@d[1@g[1@e[1@s
+Timestamp       Judge_ID    Judge_Name
+--------------  ----------  ----------
+8/5/2018 14:10  J04         Bob       
+8/5/2018 15:11  J02         Carl      
+8/5/2018 17:10  J05         Adrian    
+8/5/2018 17:34  J06         Aaron     
+8/5/2018 14:30  J02         Carl      
+sqlite> -- creating final table
+sqlite> CREATE TABLE Car_Score(
+   ...> Car_ID INT PRIMARY KEY,
+   ...> Racer_Turbo INT,
+   ...> Racer_Supercharged INT,
+   ...> Racer_Performance INT,
+   ...> Racer_Horsepower INT,
+   ...> Car_Overall INT,
+   ...> Engine_Modifications INT,
+   ...> Engine_Performance INT,
+   ...> Engine_Chrome INT, 
+   ...> Engine_Detailing INT,
+   ...> Engine_Cleanliness INT,
+   ...> Body_Frame_Undercarriage INT,
+   ...> Body_Frame_Suspension INT,
+   ...> Body_Frame_Chrome INT,
+   ...> Body_Frame_Detailing INT,
+   ...> Body_Frame_Cleanliness INT,
+   ...> Mods_Paint INT,
+   ...> Mods_Body INT,
+   ...> Mods_Wrap INT,
+   ...> Mods_Rims INT,
+   ...> Mods_Interior INT,
+   ...> Mods_Other INT,
+   ...> Mods_ICE INT,
+   ...> Mods_Aftermarket INT,
+   ...> Mods_WIP INT,
+   ...> Mods_Overall INT
+   ...> );
+sqlite> aaaaaa
+   ...> aaaaaa;a
+   ...> ;
+Error: near "aaaaaa": syntax error
+sqlite> INSERT INTO Car_Score (Car_ID, Racer_Turbo, Racer_Supercharged, Racer_Performance, Racer_Horsepower, Car_Overall, E ngine_Modifications, Engine_Performance, Engine_Chrome, Engine_Detailing, Engine_Cleanliness, Body_Frame_Undercarriage, Bod y_Frame_Suspension, Body_Frame_Chrome, Body_Frame_Detailing, Body_Frame_Cleanliness, Mods_Paint, Mods_Body, Mods_Wrap, Mods _Rims, Mods_Interior, Mods_Other, Mods_ICE, Mods_Aftermarket, Mods_WIP, Mods_Overall) SELECT Car_ID, Racer_Turbo, Racer_Sup ercharged, Racer_Performance, Racer_Horsepower, Car_Overall, Engine_Modifications, Engine_Performance, Engine_Chrome, Engin e_Detailing, Engine_Cleanliness, Body_Frame_Undercarriage, Body_Frame_Suspension, Body_Frame_Chrome, Body_Frame_Detailing,  Body_Frame_Cleanliness, Mods_Paint, Mods_Body, Mods_Wrap, Mods_Rims, Mods_Interior, Mods_Other, Mods_ICE, Mods_Aftermarket,  Mods_WIP, Mods_Overall
+   ...> FROM csvData;
+sqlite> .tables
+Car_Score       Judges          contestData   
+Cars            allContestData  csvData       
+sqlite> SELECT * FRMO [K[K[KOM Car_score[K[K[K[K[KScre[K[Kore lim[K[Kimit 5;
+Car_ID      Racer_Turbo  Racer_Supercharged  Racer_Performance  Racer_Horsepower  Car_Overall  Engine_Modifications  Engine_Performance  Engine_Chrome  Engine_Detailing  Engine_Cleanliness  Body_Frame_Undercarriage  Body_Frame_Suspension  Body_Frame_Chrome  Body_Frame_Detailing  Body_Frame_Cleanliness  Mods_Paint  Mods_Body   Mods_Wrap   Mods_Rims   Mods_Interior  Mods_Other  Mods_ICE    Mods_Aftermarket  Mods_WIP    Mods_Overall
+----------  -----------  ------------------  -----------------  ----------------  -----------  --------------------  ------------------  -------------  ----------------  ------------------  ------------------------  ---------------------  -----------------  --------------------  ----------------------  ----------  ----------  ----------  ----------  -------------  ----------  ----------  ----------------  ----------  ------------
+48          0            0                   2                  2                 4            4                     0                   2              4                 4                   2                         4                      2                  2                     2                       2           2           0           4           4              4           6           2                 0           4           
+124         0            6                   4                  2                 4            6                     6                   4              4                 4                   6                         6                      6                  6                     6                       4           6           6           6           6              6           4           6                 4           6           
+222         0            0                   0                  0                 0            0                     0                   0              6                 6                   6                         0                      0                  6                     6                       6           0           0           0           0              0           0           0                 0           4           
+207         0            0                   2                  2                 2            2                     2                   2              0                 4                   2                         2                      2                  2                     2                       2           4           2           2           0              0           0           2                 2           0           
+167         0            0                   2                  2                 0            2                     2                   0              0                 0                   0                         2                      0                  2                     2                       2           0           0           2           0              0           0           0                 0           2           
+sqlite> .mode = line[K[K[K[K[K[Kline
+sqlite> .mode line[C[C[C[C[C[C[C[CSELECT * FROM Car_Score limit 5;
+                  Car_ID = 48
+             Racer_Turbo = 0
+      Racer_Supercharged = 0
+       Racer_Performance = 2
+        Racer_Horsepower = 2
+             Car_Overall = 4
+    Engine_Modifications = 4
+      Engine_Performance = 0
+           Engine_Chrome = 2
+        Engine_Detailing = 4
+      Engine_Cleanliness = 4
+Body_Frame_Undercarriage = 2
+   Body_Frame_Suspension = 4
+       Body_Frame_Chrome = 2
+    Body_Frame_Detailing = 2
+  Body_Frame_Cleanliness = 2
+              Mods_Paint = 2
+               Mods_Body = 2
+               Mods_Wrap = 0
+               Mods_Rims = 4
+           Mods_Interior = 4
+              Mods_Other = 4
+                Mods_ICE = 6
+        Mods_Aftermarket = 2
+                Mods_WIP = 0
+            Mods_Overall = 4
+
+                  Car_ID = 124
+             Racer_Turbo = 0
+      Racer_Supercharged = 6
+       Racer_Performance = 4
+        Racer_Horsepower = 2
+             Car_Overall = 4
+    Engine_Modifications = 6
+      Engine_Performance = 6
+           Engine_Chrome = 4
+        Engine_Detailing = 4
+      Engine_Cleanliness = 4
+Body_Frame_Undercarriage = 6
+   Body_Frame_Suspension = 6
+       Body_Frame_Chrome = 6
+    Body_Frame_Detailing = 6
+  Body_Frame_Cleanliness = 6
+              Mods_Paint = 4
+               Mods_Body = 6
+               Mods_Wrap = 6
+               Mods_Rims = 6
+           Mods_Interior = 6
+              Mods_Other = 6
+                Mods_ICE = 4
+        Mods_Aftermarket = 6
+                Mods_WIP = 4
+            Mods_Overall = 6
+
+                  Car_ID = 222
+             Racer_Turbo = 0
+      Racer_Supercharged = 0
+       Racer_Performance = 0
+        Racer_Horsepower = 0
+             Car_Overall = 0
+    Engine_Modifications = 0
+      Engine_Performance = 0
+           Engine_Chrome = 0
+        Engine_Detailing = 6
+      Engine_Cleanliness = 6
+Body_Frame_Undercarriage = 6
+   Body_Frame_Suspension = 0
+       Body_Frame_Chrome = 0
+    Body_Frame_Detailing = 6
+  Body_Frame_Cleanliness = 6
+              Mods_Paint = 6
+               Mods_Body = 0
+               Mods_Wrap = 0
+               Mods_Rims = 0
+           Mods_Interior = 0
+              Mods_Other = 0
+                Mods_ICE = 0
+        Mods_Aftermarket = 0
+                Mods_WIP = 0
+            Mods_Overall = 4
+
+                  Car_ID = 207
+             Racer_Turbo = 0
+      Racer_Supercharged = 0
+       Racer_Performance = 2
+        Racer_Horsepower = 2
+             Car_Overall = 2
+    Engine_Modifications = 2
+      Engine_Performance = 2
+           Engine_Chrome = 2
+        Engine_Detailing = 0
+      Engine_Cleanliness = 4
+Body_Frame_Undercarriage = 2
+   Body_Frame_Suspension = 2
+       Body_Frame_Chrome = 2
+    Body_Frame_Detailing = 2
+  Body_Frame_Cleanliness = 2
+              Mods_Paint = 2
+               Mods_Body = 4
+               Mods_Wrap = 2
+               Mods_Rims = 2
+           Mods_Interior = 0
+              Mods_Other = 0
+                Mods_ICE = 0
+        Mods_Aftermarket = 2
+                Mods_WIP = 2
+            Mods_Overall = 0
+
+                  Car_ID = 167
+             Racer_Turbo = 0
+      Racer_Supercharged = 0
+       Racer_Performance = 2
+        Racer_Horsepower = 2
+             Car_Overall = 0
+    Engine_Modifications = 2
+      Engine_Performance = 2
+           Engine_Chrome = 0
+        Engine_Detailing = 0
+      Engine_Cleanliness = 0
+Body_Frame_Undercarriage = 0
+   Body_Frame_Suspension = 2
+       Body_Frame_Chrome = 0
+    Body_Frame_Detailing = 2
+  Body_Frame_Cleanliness = 2
+              Mods_Paint = 2
+               Mods_Body = 0
+               Mods_Wrap = 0
+               Mods_Rims = 2
+           Mods_Interior = 0
+              Mods_Other = 0
+                Mods_ICE = 0
+        Mods_Aftermarket = 0
+                Mods_WIP = 0
+            Mods_Overall = 2
+sqlite> --COMPLETED FIRST PART OF LAB, END OF SCRIPT
+sqlite> EXI[K[K[Kex[K[Kquit
+   ...> ;
+Error: near "quit": syntax error
+sqlite> exit
+   ...> ;
+Error: near "exit": syntax error
+sqlite> 
+]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ exit
+exit
+
+Script done on Tue 08 Mar 2022 07:35:23 PM EST

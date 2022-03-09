@@ -1,3 +1,6 @@
 [submodule "lab_1/data_lab1"]
 	path = lab_1/data_lab1
 	url = https://gist.github.com/d66a59b6db4e59c16efd4c42ad411f8e.git
+[submodule "lab_2/data_lab2"]
+	path = lab_2/data_lab2
+	url = https://gist.github.com/katychuang/d66a59b6db4e59c16efd4c42ad411f8e
