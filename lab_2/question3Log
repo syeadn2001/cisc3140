@@ -1,0 +1,882 @@
+Script started on Wed Mar  9 04:22:16 2022
+[1m[7m%[27m[1m[0m                                                                                                                                  ]7;file://Adnaans-MacBook-Air.local/Users/adnaan.syed2001/Documents/Class%20Notes/cisc3140/cisc3140/lab_2[0m[27m[24m[J[32m√[39m [1m[34mlab_2[39m[0m % [K[?2004h..tab  .  ssqlite2 3 carContestLab.db[1m [0m[0m [?2004l
+SQLite version 3.36.0 2021-06-18 18:58:49
+Enter ".help" for usage hints.
+sqlite> .tables
+Car_Score      Judges         csvData      
+Cars           carRanks       orderedScores
+sqlite> .schema Judges
+CREATE TABLE Judges(
+Timestamp DATETIME,
+Judge_ID TEXT,
+Judge_Name TEXT
+);
+sqlite> SLEC[K[K[KELECT * FROM Judges limit 5;
+8/5/2018 14:10|J04|Bob
+8/5/2018 15:11|J02|Carl
+8/5/2018 17:10|J05|Adrian
+8/5/2018 17:34|J06|Aaron
+8/5/2018 14:30|J02|Carl
+sqlite> .mode clumn[K[K[K[Kolumn
+sqlite> .headers on
+sqlite> .headers on[10Gmode column[9GSELECT * FROM Judges limit 5;
+Timestamp       Judge_ID  Judge_Name
+--------------  --------  ----------
+8/5/2018 14:10  J04       Bob       
+8/5/2018 15:11  J02       Carl      
+8/5/2018 17:10  J05       Adrian    
+8/5/2018 17:34  J06       Aaron     
+8/5/2018 14:30  J02       Carl      
+sqlite> SELECT * FROM Judges limit 5;[9G.headers on[K[10Gmode column[9GSELECT * FROM Judges limit 5;[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KSELECT Judge_ID , COUNT(*) GROUP BY Judge_ID FROM csvData;
+Error: near "FROM": syntax error
+sqlite> select Judge_ID, Count[K[K[K[K[Kcount(*) from csvDA[Kata group by Judge_ID;
+Judge_ID  count(*)
+--------  --------
+J01       31      
+J02       10      
+J03       19      
+J04       36      
+J05       10      
+J06       32      
+J08       5       
+J09       24      
+sqlite> select Judge_ID, count(*) from csvData group by Judge_ID;[9GSELECT Judge_ID, COUNT(*) GROUP BY Judge_ID FROM csvData;[PT[PT[PT[PT[1@MT[1@IT[1@NTT[P((*[P)[1@T)[1@i)[1@m)[1@e)[1@s)[1@t)[1@a)[1@m)[1@p)
+Error: near "FROM": syntax error
+sqlite> SELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM csvData;;[K;[K;[K;[K;[K;[K;[KJ;u;d;g;e;s;
+Error: near "FROM": syntax error
+sqlite> SLE[K[KELECT MIN FROM [K[K[K[K(Timestamp ) FROM Judges;
+MIN(Timestamp)
+--------------
+8/5/2018 13:11
+sqlite> SLEC[K[K[KEC[KLECT Judge_ID, MIN(Tem[K[Kimestamp) GROUP BY Judge_ID FROM Judges;
+Error: near "FROM": syntax error
+sqlite> SELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM Judges;[P,[P,[P,[P,[P,[P,[P,[P,,[P [PM
+Error: near "FROM": syntax error
+sqlite> SELECT MIN(Timestamp) GROUP BY Judge_ID FROM Judges;[16G[10@Judge_ID, M[71G[16G[10P[30G[18P[43G[16G[10@Judge_ID, [40G[18@ GROUP BY Judge_ID[71G[64GcsvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[K[9GSELECT Judge_ID, COUNT(*) GROUP BY Judge_ID FROM csvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[9GSELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM csvData;[64GJudges;[K[64GcsvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[K
+Judge_ID  count(*)
+--------  --------
+J01       31      
+J02       10      
+J03       19      
+J04       36      
+J05       10      
+J06       32      
+J08       5       
+J09       24      
+sqlite> select Judge_ID, count(*) from csvData group by Judge_ID;[9GSELECT MIN(Timestamp) GROUP BY Judge_ID FROM Judges;[K[16G[10@Judge_ID, M[71G[16G[10P[30G[18P[43G[16G[10@Judge_ID, [40G[18@ GROUP BY Judge_ID[71G[64GcsvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[K[9GSELECT Judge_ID, COUNT(*) GROUP BY Judge_ID FROM csvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[9GSELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM csvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[K[9GSELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM csvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[K[9GSELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM csvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[K[9GSELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM csvData;[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[K[9GSELECT Judge_ID, MIN(Timestamp) GROUP BY Judge_ID FROM csvData;[64GJudges;[K[16G[10P[30G[18P[43G[16G[10@Judge_ID, [40G[18@ GROUP BY Judge_ID[71G[16G[10PM[61G[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[9G[Kselect Judge_ID, count(*) from csvData group by Judge_ID;[9GSELECT MIN(Timestamp) GROUP BY Judge_ID FROM Judges;[K[9Gselect Judge_ID, count(*) from csvData group by Judge_ID;[9G[KSLE[K[KELECT Judge_ID, MIN(Timesp[Ktamp) from Judges GROUP BY Judge_ID;
+Judge_ID  MIN(Timestamp)
+--------  --------------
+J01       8/5/2018 13:47
+J02       8/5/2018 13:16
+J03       8/5/2018 13:26
+J04       8/5/2018 13:11
+J05       8/5/2018 13:28
+J06       8/5/2018 13:20
+J08       8/5/2018 15:26
+J09       8/5/2018 14:08
+sqlite> SELECT Judge_ID, MIN(Timestamp) from Judges GROUP BY Judge_ID;[P([P([1@a([1@x([P([P([1@A([1@X((Timestam
+Judge_ID  MAX(Timestamp)
+--------  --------------
+J01       8/5/2018 17:50
+J02       8/5/2018 17:14
+J03       8/5/2018 17:35
+J04       8/5/2018 17:51
+J05       8/5/2018 17:31
+J06       8/5/2018 17:43
+J08       8/5/2018 17:52
+J09       8/5/2018 17:48
+sqlite> SELECT Judge_ID, MAX(Timestamp) from Judges GROUP BY Judge_ID;[1@,)[1@ )[P)[P))[1@,  [1@ f[1@M [1@A [1@X [1@( [1@T [1@i [1@m [1@e [1@s [1@t [1@a [1@m [1@p [1@)  [1@ f[1@-  [1@ f[1@M [1@I [1@N [1@( [1@T [1@e [P [1@i [1@m [1@e [1@s [1@t [1@a [1@m [1@p [1@) 
+Judge_ID  MAX(Timestamp)  MAX(Timestamp) - MIN(Timestamp)
+--------  --------------  -------------------------------
+J01       8/5/2018 17:50  0                              
+J02       8/5/2018 17:14  0                              
+J03       8/5/2018 17:35  0                              
+J04       8/5/2018 17:51  0                              
+J05       8/5/2018 17:31  0                              
+J06       8/5/2018 17:43  0                              
+J08       8/5/2018 17:52  0                              
+J09       8/5/2018 17:48  0                              
+sqlite> select time[K[K[K[K[K[K[K[K[K[Kselect time ([K(8/5/2018 17:31)
+   ...> ;
+Error: near "17": syntax error
+sqlite> slec[K[K[Kelect  time('8/5/2018 17:31');
+time('8/5/2018 17:31')
+----------------------
+                      
+sqlite> select GETDATE() default_date,
+   ...>        cast(GETDATE() as time) time_part;
+Error: no such function: GETDATE
+sqlite> select GETDATE() as default_date,
+   ...>        cast(DATEPART(HOUR,GETDATE()) as varchar(2))+':'+ cast(DATEPART(MINUTE,GETDATE()) as varchar(4)) as time_part
+   ...> ;
+Error: no such function: GETDATE
+sqlite> sle[K[Kelect ltrim('8/5/2018 17:50')
+   ...> ;
+ltrim('8/5/2018 17:50')
+-----------------------
+8/5/2018 17:50         
+sqlite> sl[Kelect ltrim(';
+   ...> time ;
+   ...> 
+   ...> ;
+   ...> );
+   ...> ;sa;ldfk[K^D
+Error: unrecognized token: "';
+time ;
+
+;
+);"
+[1m[7m%[27m[1m[0m                                                                                                                                  ]7;file://Adnaans-MacBook-Air.local/Users/adnaan.syed2001/Documents/Class%20Notes/cisc3140/cisc3140/lab_2[0m[27m[24m[J[31m?[39m [1m[34mlab_2[39m[0m % [K[?2004hssqlite 3 data_lab2[1m/[0m[0m          carContestLab.db[1m [0m[0m [?2004l
+SQLite version 3.36.0 2021-06-18 18:58:49
+Enter ".help" for usage hints.
+sqlite> 8/5/2018 17:50[K[K[K[K[K[K[K[K[K[K[K[K[Ktime(8/5/2018 17:50)
+   ...> ;
+Error: near "time": syntax error
+sqlite> unixepock[Kh(8/5/2018 17:50)
+   ...> ;
+Error: near "unixepoch": syntax error
+sqlite> ;unixepoch(8/5/2018 17:50)[9G;[Kunixepoch(8/5/2018 17:50)[9G;[Ktime(8/5/2018 17:50)[9G);[K;[Ktime ;[9Gselect ltrim(';[9G;[Kselect ltrim('8/5/2018 17:50')[9G;[K       cast(DATEPART(HOUR,GETDATE()) as varchar(2))+':'+ cast(DATEPART(MINUTE,GETDATE()) as varchar(4)) as time_part[9Gselect GETDATE() as default_date,[K[9G       cast(GETDATE() as time) time_part;[9Gselect GETDATE() default_date,[K[16Gtime('8/5/2018 17:31');[9G;[Kselect time(8/5/2018 17:31)[9GSELECT Judge_ID, MAX(Timestamp), MAX(Timestamp) - MIN(Timestamp) from Judges GROUP BY Judge_ID;[9Gselect time(8/5/2018 17:31)[K[9GSELECT Judge_ID, MAX(Timestamp), MAX(Timestamp) - MIN(Timestamp) from Judges GROUP BY Judge_ID;
+J01|8/5/2018 17:50|0
+J02|8/5/2018 17:14|0
+J03|8/5/2018 17:35|0
+J04|8/5/2018 17:51|0
+J05|8/5/2018 17:31|0
+J06|8/5/2018 17:43|0
+J08|8/5/2018 17:52|0
+J09|8/5/2018 17:48|0
+sqlite> .headers on
+sqlite> .mod[Kde column
+sqlite> .mode column[10Gheaders on[K[9GSELECT Judge_ID, MAX(Timestamp), MAX(Timestamp) - MIN(Timestamp) from Judges GROUP BY Judge_ID;
+Judge_ID  MAX(Timestamp)  MAX(Timestamp) - MIN(Timestamp)
+--------  --------------  -------------------------------
+J01       8/5/2018 17:50  0                              
+J02       8/5/2018 17:14  0                              
+J03       8/5/2018 17:35  0                              
+J04       8/5/2018 17:51  0                              
+J05       8/5/2018 17:31  0                              
+J06       8/5/2018 17:43  0                              
+J08       8/5/2018 17:52  0                              
+J09       8/5/2018 17:48  0                              
+sqlite> slec[K[K[Kelect max (timestamp) from judges;
+max(timestamp)
+--------------
+8/5/2018 17:52
+sqlite> select max(timestamp) from judges;[1@um[1@nm[1@im[1@xm[1@em[1@pm[1@om[1@cm[1@km[1@(mmax([P([1@h((max(timestamp)[1@) 
+Error: no such function: unixepoch
+sqlite> SELECT unixepoch() - unixepoch('2004-01-01 02:34:56');
+Error: no such function: unixepoch
+sqlite> strf[K[K[K[Kselect strftime('%s')
+   ...> ;
+strftime('%s')
+--------------
+1646819218    
+sqlite> ;select strftime('%s')s')[Km')');
+strftime('%m')
+--------------
+03            
+sqlite> select strftime('%m');');[KM');
+strftime('%M')
+--------------
+47            
+sqlite> select strftime('%M');,');8');/');5');/');2');0');1');8'); ');1');7');:');3');1');
+strftime('%M,8/5/2018 17:31')
+-----------------------------
+47,8/5/2018 17:31            
+sqlite> SELECT unixepoch() - unixepoch('2004-01-01 02:34:56');[1@8)[1@/)[1@5)[1@/)[1@2)[1@0)[1@1)[1@8)[1@ )[1@1)[1@7)[1@:)[1@4)[1@8)[9G[Kselect strftime('%M,8/5/2018 17:31');[28G');[K,8/5/2018 17:31');[9G[Kselect unixepoch(8/5/2018 17:48) - unixepock[Kh(2004-01-01 02:34:56)
+   ...> ;
+Error: near "17": syntax error
+sqlite> SELECT datetime(1092941466, 'unixepoch');
+datetime(1092941466, 'unixepoch')
+---------------------------------
+2004-08-19 18:51:06              
+sqlite> SELECT datetime(1092941466, 'unixepoch');[P,[P,[P,[P,[P,[P,[P,[P,[P,[P,[1@8,[1@/,[1@5,[1@/,[1@2,[1@0,[1@1,[1@8,[1@ ,[1@1,[1@7,[1@:,[1@4,[1@3,
+Error: near "17": syntax error
+sqlite> SELECT datetime(8/5/2018 17:43, 'unixepoch');[1@C8[1@A8[1@S8[1@T8[1@(88/5/2018 17:43[1@ ,[1@A,[1@S,[1@ ,[1@T,[1@E,[1@X,[1@T,[1@),
+Error: near "17": syntax error
+sqlite> SELECT CAST(8/5/2018 17:43 as test[K[Kxt)
+   ...> ;
+Error: near "17": syntax error
+sqlite> SELECT strftime('%s','now')
+   ...> ;
+strftime('%s','now')
+--------------------
+1646819683          
+sqlite> select strftime ('%s", SELECT strftime('%s','now')[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K8/5/2018 17:50)
+   ...> ;
+   ...> ;
+   ...> 
+   ...> 
+   ...> asdf[K[K[K[K;
+   ...> laksdjf
+   ...> exit
+   ...> logout
+   ...> quit
+   ...> .quit()
+   ...> .quit
+   ...> .exit
+   ...> .exit()
+   ...> 
+zsh: suspended  sqlite3 carContestLab.db
+[1m[7m%[27m[1m[0m                                                                                                                                  ]7;file://Adnaans-MacBook-Air.local/Users/adnaan.syed2001/Documents/Class%20Notes/cisc3140/cisc3140/lab_2[0m[27m[24m[J[31m?[39m [1m[34mlab_2[39m[0m % [K[?2004hsqlite3 carContestLab.db[?2004l
+SQLite version 3.36.0 2021-06-18 18:58:49
+Enter ".help" for usage hints.
+sqlite> );;[Ktime ;[9Gselect ltrim(';[9G;[Kselect ltrim('8/5/2018 17:50')[9G;[Kselect ltrim('8/5/2018 17:50')[9G;[Kselect ltrim(';[9Gtime ;[K[9G;[K);[Kselect strftime('%s", 8/5/2018 17:50);
+   ...> 
+zsh: suspended  sqlite3 carContestLab.db
+[1m[7m%[27m[1m[0m                                                                                                                                  ]7;file://Adnaans-MacBook-Air.local/Users/adnaan.syed2001/Documents/Class%20Notes/cisc3140/cisc3140/lab_2[0m[27m[24m[J[31m?[39m [1m[34mlab_2[39m[0m % [K[?2004hsqlite3 carContestLab.db[?2004l
+SQLite version 3.36.0 2021-06-18 18:58:49
+Enter ".help" for usage hints.
+sqlite> SELECT strftime('%s','now') - strftime('%s','2004-01-01 02:34:56');
+573895276
+sqlite> time(8/5/2018 17:50)
+   ...> ;
+Error: near "time": syntax error
+sqlite> time(8/5/2018 17:50);
+Error: near "time": syntax error
+sqlite> time(Cast(8/5/2018 17:50 as text))
+   ...> ;
+Error: near "time": syntax error
+sqlite> julianday[K[K[K[K[K[K[K[K[Ku[Kjulianday(8/5/2018 17:50)
+   ...> ;
+Error: near "julianday": syntax error
+sqlite> julianday[9G;[Kjulianday(8/5/2018 17:50) )a)s) )i)n)t));
+Error: near "julianday": syntax error
+sqlite> CAST((JULIANDAY(MAX(Timestamp))p))[K))[K))[K))[K))[K))[K))[K))[K))[K))[K))[K))[K))[K[PJJULIANDAY((('))2))0))0))4))-))0))1))-))0))1)) ))0))2)):))3))4)):))5))6))')))a)s) ))[K)[K)[K )a)s) )i)n)t));
+Error: near "CAST": syntax error
+sqlite> sele[K[K[K[Kselect * from judges limit 4;[K[K5;
+8/5/2018 14:10|J04|Bob
+8/5/2018 15:11|J02|Carl
+8/5/2018 17:10|J05|Adrian
+8/5/2018 17:34|J06|Aaron
+8/5/2018 14:30|J02|Carl
+sqlite> .mode column
+sqlite> .headers on
+sqlite> .headers on[9G[K.headers on[10Gmode column[9Gselect * from judges limit 5;
+Timestamp       Judge_ID  Judge_Name
+--------------  --------  ----------
+8/5/2018 14:10  J04       Bob       
+8/5/2018 15:11  J02       Carl      
+8/5/2018 17:10  J05       Adrian    
+8/5/2018 17:34  J06       Aaron     
+8/5/2018 14:30  J02       Carl      
+sqlite> julianday[K[K[K[K[K[K[K[K[Kselect jul[K[K[Kjulianday(8/5/2018 17:50)
+   ...> ;
+Error: near "17": syntax error
+sqlite> select time(8/5/2018 17:50);
+Error: near "17": syntax error
+sqlite> select time(cast([K[K[K[K[K[K[K[K[Kime([K[K[K[K[Kmax(timestamp) from judges;
+max(timestamp)
+--------------
+8/5/2018 17:52
+sqlite> select max(timestamp) from judges;[1@jm[1@um[1@lm[1@im[1@am[1@nm[1@dm[1@am[1@ym[1@(mmax(timestamp)[1@) 
+julianday(max(timestamp))
+-------------------------
+                         
+sqlite> select julianday(max(timestamp)) from judges;[P([P([P([P([P([P([P([P([P([1@u([1@n([1@i([1@x([1@e([1@p([1@o([1@c([1@k(
+Error: no such function: unixepock
+sqlite> select unixepock(max(timestamp)) from judges;[P([1@h(
+Error: no such function: unixepoch
+sqlite> select unixepoch(max(timestamp)) from judges;[P([P([P([P([P([P([P([P([P([1@t([1@o([P([1@i([1@m([1@e(
+time(max(timestamp))
+--------------------
+                    
+sqlite> select time(max(timestamp)) from judges;[16G[5@unixepoch[54G[24Gk[54G[16Gjulianday[54G[16G[10P[29G[P[43G
+max(timestamp)
+--------------
+8/5/2018 17:52
+sqlite> select max(timestamp) from judges;[16G[5@time([34G[1@)[49G[16G[5@unixepoch[54G[24Gk[54G[16Gjulianday[54G[16G[10P[29G[P[43G[16G[10@julianday([39G[1@)[54G[16G[10P[29G[P[43G[16G[10@julianday([39G[1@)[54G[P([P([P([P([P([P([P([P([P([1@s([1@t([1@r([1@f([1@t([1@i([1@m([1@e(
+strftime(max(timestamp))
+------------------------
+8/5/2018 17:52          
+sqlite> select strftime(max(timestamp)) from judges;[1@"m[1@sm[Pm[1@%m[1@sm[1@"m[1@,m
+strftime("%s",max(timestamp))
+-----------------------------
+                             
+sqlite> select strftime("%s",max(timestamp)) from judges;[25G[5Pm[53G[25G[5@"%s",m[58G[1@Cm[1@Am[1@Sm[1@Tm[1@(mmax(timestamp)[1@ )[1@a)[1@s)[1@ )[1@t)[1@e)[1@x)[1@t))[1@) 
+strftime("%s",CAST(max(timestamp) as text))
+-------------------------------------------
+                                           
+sqlite> select strftime("%s",CAST(max(timestamp) as text)) from judges;[P)[P)[P)[P)[1@v)[1@a)[1@r)[1@c)[1@h)[1@a)[1@r)
+strftime("%s",CAST(max(timestamp) as varchar))
+----------------------------------------------
+                                              
+sqlite> select strftime("%s",CAST(max(timestamp) as varchar)) from judges;)[1@) [1@(m
+strftime("%s",CAST((max(timestamp)) as varchar))
+------------------------------------------------
+                                                
+sqlite> select strftime("%s",CAST((max(timestamp)) as varchar)) from judges;[35G[P[48G[P[75G[53G[3Ptext[72G[30G[5P[43G[9P[58G[25G[5Pm[53G
+strftime(max(timestamp))
+------------------------
+8/5/2018 17:52          
+sqlite> select strftime(max(timestamp)) from judges;[1@%m[1@Ym[1@ m[1@%mm[1@ma[1@ m[1@%m[1@dm[Pm[Pm[Pm[Pa[Pm[Pm[Pm[Pm[1@'m[1@%m[1@Ym[1@ m[1@%mm[1@ma[1@ m[1@%m[1@dm[1@'m[1@,m
+strftime('%Y %m %d',max(timestamp))
+-----------------------------------
+                                   
+sqlite> 
+sqlite> 
+sqlite> SELECT strftime('%H %M %S %s','now');
+strftime('%H %M %S %s','now')
+-----------------------------
+10 07 31 1646820451          
+sqlite> SELECT strftime('%Y %m %d','now');
+strftime('%Y %m %d','now')
+--------------------------
+2022 03 09                
+sqlite> SELECT strftime('%Y %m %d','now');[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K%M;[K', Timestamp) from Judges;
+strftime('%M', Timestamp)
+-------------------------
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+sqlite> SELECT strftime('%M', Timestamp) from Judges;[P'[1@Y'
+strftime('%Y', Timestamp)
+-------------------------
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+                         
+sqlite> SELECT strftime('%Y', Timestamp) from Judges;) [1@ f[1@a [1@s  [1@ f[1@i [P [1@b [1@r [1@u [1@h 
+bruh
+----
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+sqlite> SELECT strftime('%Y', Timestamp) as bruh from Judges;[42G[8Pf[54G[27GM[54G[27GY %m %d','now');[K[27G[3@H %M %S %s[46G[9Gselect strftime('%Y %m %d',max(timestamp)) from judges;[Pi[1@Tiimestamp)) from j[Pu[1@Ju
+strftime('%Y %m %d',max(Timestamp))
+-----------------------------------
+                                   
+sqlite> select strftime('%Y %m %d',max(Timestamp)) from Judges;[1@*s[1@ s
+Error: near "strftime": syntax error
+sqlite> select * strftime('%Y %m %d',max(Timestamp)) from Judges;
+Error: near "strftime": syntax error
+sqlite> select * strftime('%Y %m %d',max(Timestamp)) from Judges;[1@, 
+Timestamp       Judge_ID  Judge_Name  strftime('%Y %m %d',max(Timestamp))
+--------------  --------  ----------  -----------------------------------
+8/5/2018 17:52  J08       Danny                                          
+sqlite> select *, strftime('%Y %m %d',max(Timestamp)) from Judges;[P%[P%[Pd[P%[P%[Pd
+Timestamp       Judge_ID  Judge_Name  strftime('%d',max(Timestamp))
+--------------  --------  ----------  -----------------------------
+8/5/2018 17:52  J08       Danny                                    
+sqlite> julianday('now') - julianday('1947-08-15')
+   ...> ;
+Error: near "julianday": syntax error
+sqlite> SELECT julianday('now') - julianday('1947-08-15');
+julianday('now') - julianday('1947-08-15')
+------------------------------------------
+27235.4254613426                          
+sqlite> seSELECT julianday('now') - julianday('1947-08-15');[9G;[Kjulianday('now') - julianday('1947-08-15')[9Gselect *, strftime('%d',max(Timestamp)) from Judges;[30G[6@Y %m %d[67G[30G[6Pd[61G[P,[P,[P,[P,[P,[P,[P,[P,[P,[P,[P,[P,[P,[1@t,[1@i,[1@m,[1@e,,[Pm[1@(m
+Timestamp       Judge_ID  Judge_Name  time(max(Timestamp))
+--------------  --------  ----------  --------------------
+8/5/2018 17:52  J08       Danny                           
+sqlite> 
+sqlite> CAST((JULIANDAY(MAX(Timestamp)) - JULIANDAY(MIN(Timestamp)))*24 AS INT) AS  Duration_Hrs,
+   ...> ;
+Error: near "CAST": syntax error
+sqlite> A[KSELECT 
+   ...> CAST((JULIANDAY(MAX(Timestamp)) - JULIANDAY(MIN(Timestamp)))*24 AS INT) AS  Duration_Hrs
+   ...> FROM Judges;
+Duration_Hrs
+------------
+            
+sqlite> ^D
+[1m[7m%[27m[1m[0m                                                                                                                                  ]7;file://Adnaans-MacBook-Air.local/Users/adnaan.syed2001/Documents/Class%20Notes/cisc3140/cisc3140/lab_2[0m[27m[24m[J[31m?[39m [1m[34mlab_2[39m[0m % [K[?2004heexe  eexit[?2004l
+zsh: you have suspended jobs.
+[1m[7m%[27m[1m[0m                                                                                                                                  ]7;file://Adnaans-MacBook-Air.local/Users/adnaan.syed2001/Documents/Class%20Notes/cisc3140/cisc3140/lab_2[0m[27m[24m[J[32m√[39m [1m[34mlab_2[39m[0m % [K[?2004heexit[?2004l
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+Script done on Wed Mar  9 05:17:46 2022

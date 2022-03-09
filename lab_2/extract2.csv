@@ -1,0 +1,55 @@
+Car_ID,Year,Make,Model,Scores,Rank,topThree
+174,2006,Acura,Rsx,4,163,1
+71,2008,Acura,TL,6,159,2
+230,2004,Acura,Tsx,20,119,3
+197,2010,Audi,A4,2,164,1
+220,2004,Audi,A4,14,131,2
+108,2013,Audi,S4,14,130,3
+28,1995,Bmw,318xi,8,150,1
+111,2007,Bmw,328i,10,140,2
+172,2014,Bmw,4,22,117,3
+0,2015,Chevy,Camaro,0,166,1
+170,2014,Chevy,Cruze,50,55,2
+218,2010,Chevy,Camaro,64,33,3
+216,2007,Chrystler,300,96,11,1
+42,2001,Dodge,Viper,8,149,1
+167,2016,Ford,Mystang,20,118,1
+219,2016,Ford,"Focus rs",26,104,2
+120,2014,Ford,"Focus st",30,94,3
+70,2014,Honda,Civic,0,167,1
+101,2014,Honda,Civic,0,165,2
+72,2016,Honda,"Civic si",4,162,3
+159,2013,Hyundai,"Gen coupe",14,128,1
+92,2017,Hyundai,"Elantra sport",30,95,2
+38,2017,Hyundai,"Elantra sport",62,40,3
+95,2004,Infiniti,G35,12,136,1
+20,2009,Infiniti,G37,38,79,2
+122,2011,Infiniti,M37s,44,68,3
+124,2015,Jeep,Wrangler,124,2,1
+212,2001,Lexus,Is300,6,157,1
+190,1995,Lexus,Sc300,10,146,2
+222,2015,Lexus,Is250,40,74,3
+138,1990,Mazda,Miata,10,144,1
+79,1993,Mazda,Miata,18,122,2
+141,1993,Mazda,Miata,26,105,3
+98,2012,Mercedes,C63,26,102,1
+17,2016,Mercedes,C43,34,88,2
+84,2012,Mercedes,Cl63amg,70,28,3
+163,2013,Mitsu,Ralliart,22,113,1
+19,2001,Mitsu,Evo7,40,78,2
+176,2014,Mitsu,Lancer,40,76,3
+16,2008,Nissan,350z,10,142,1
+68,2013,Nissan,Altima,10,138,2
+193,2014,Nissan,Ssntra,14,134,3
+235,2013,Scion,Frs,20,121,1
+57,2015,Scion,Frs,80,21,2
+64,2004,Subaru,Forester,6,160,1
+40,2007,Subaru,Legacy,6,158,2
+75,2012,Subaru,WRX,6,156,3
+243,2008,Toyota,Matrix,10,141,1
+241,2007,Toyota,Camry,24,110,2
+189,2012,Toyota,"Fj cruiser",50,56,3
+66,2010,Volkswagen,Gti,4,161,1
+86,1996,Volkswagen,Jetta,8,154,2
+185,2013,Volkswagen,Jett,8,151,3
+100,2006,Volvo,S60r,22,116,1
