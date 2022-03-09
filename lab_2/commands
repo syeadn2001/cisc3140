@@ -1,0 +1,14 @@
+SELECT 
+	* 
+FROM (
+	SELECT
+		*,
+		RANK () OVER ( 
+			PARTITION BY Make
+			ORDER BY Rank DESC
+		) topThree 
+	FROM
+		orderedScores
+) 
+WHERE 
+	topThree<=3;

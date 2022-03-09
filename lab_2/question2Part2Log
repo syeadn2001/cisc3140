@@ -1,477 +1,1237 @@
-Script started on Tue 08 Mar 2022 07:36:30 PM EST
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[?1034h[Adnaan.Syed20@sol26 lab_2]$ sc[K[Ksqlite3 con[K[K[KcarContestLab.db 
+Script started on Wed 09 Mar 2022 03:12:02 AM EST
+]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[?1034h[Adnaan.Syed20@sol26 lab_2]$ sqlite2[K3 carContestLab.db 
 SQLite version 3.7.17 2013-05-20 00:56:22
 Enter ".help" for instructions
 Enter SQL statements terminated with a ";"
-[?1034hsqlite> --Have to createa [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ksdfgsdfg[K[K[K[K[K[K[K[KCREATE TABLE AS {[K(
-   ...> SELECT Car[K[K[KCars.[K[K[K[K[K[K[K[K[K[K[K[K;
-Error: near "AS": syntax error
-sqlite> .tables[K[K[K[K[K[Kschea[K[Kema Cars
-CREATE TABLE Cars(
-Car_ID INT PRIMARY KEY,
-Year INT,
-Make TEXT,
-Model TEXT,
-Name TEXT,
-Email TEXT
-);
-sqlite> .schema Car_s[KScore[Ke[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KALTER TABLE Car[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K.schema Cars_[K[K_Score
-CREATE TABLE Car_Score(
-Car_ID INT PRIMARY KEY,
-Racer_Turbo INT,
-Racer_Supercharged INT,
-Racer_Performance INT,
-Racer_Horsepower INT,
-Car_Overall INT,
-Engine_Modifications INT,
-Engine_Performance INT,
-Engine_Chrome INT, 
-Engine_Detailing INT,
-Engine_Cleanliness INT,
-Body_Frame_Undercarriage INT,
-Body_Frame_Suspension INT,
-Body_Frame_Chrome INT,
-Body_Frame_Detailing INT,
-Body_Frame_Cleanliness INT,
-Mods_Paint INT,
-Mods_Body INT,
-Mods_Wrap INT,
-Mods_Rims INT,
-Mods_Interior INT,
-Mods_Other INT,
-Mods_ICE INT,
-Mods_Aftermarket INT,
-Mods_WIP INT,
-Mods_Overall INT
-);
-sqlite> .tables
-Car_Score       Judges          contestData   
-Cars            allContestData  csvData       
-sqlite> ALTER TABLE Car_Score 
-   ...> S[KADD COLUMN Scores INT;
-sqlite> UPDATE Car_Score 
-   ...> SET Scores - ==[K[K[K[K[K = (Racer_Turbo + Racer_Supercharged + Racer_Performance + Racer_Horsepower + Car_Overall + Engine_Modifi cations + Engine_Performance + Engine_Chrome + Engine_Detailing + Engine_Cleanliness + Body_Frame_Undercarriage + Body_Fram e_Suspension + Body_Frame_Chrome + Body_Frame_Detailing + Body_Frame_Cleanliness + Mods_Paint + Mods_Body + Mods_Wrap + Mod s_Rims + Mods_Interior + Mods_Other + Mods_ICE + Mods_Aftermarket + Mods_WIP + Mods_Overall);
-sqlite> SELECT * FROM Car_Score LIMIT 5;
-48|0|0|2|2|4|4|0|2|4|4|2|4|2|2|2|2|2|0|4|4|4|6|2|0|4|62
-124|0|6|4|2|4|6|6|4|4|4|6|6|6|6|6|4|6|6|6|6|6|4|6|4|6|124
-222|0|0|0|0|0|0|0|0|6|6|6|0|0|6|6|6|0|0|0|0|0|0|0|0|4|40
-207|0|0|2|2|2|2|2|2|0|4|2|2|2|2|2|2|4|2|2|0|0|0|2|2|0|40
-167|0|0|2|2|0|2|2|0|0|0|0|2|0|2|2|2|0|0|2|0|0|0|0|0|2|20
-sqlite> .MODE LI[K[K[K[K[K[K[K[K.mode line
-sqlite> .mode line
-sqlite> .mode line[C[C[C[C[C[C[C[CSELECT * FROM Car_Score LIMIT 5;
-                  Car_ID = 48
-             Racer_Turbo = 0
-      Racer_Supercharged = 0
-       Racer_Performance = 2
-        Racer_Horsepower = 2
-             Car_Overall = 4
-    Engine_Modifications = 4
-      Engine_Performance = 0
-           Engine_Chrome = 2
-        Engine_Detailing = 4
-      Engine_Cleanliness = 4
-Body_Frame_Undercarriage = 2
-   Body_Frame_Suspension = 4
-       Body_Frame_Chrome = 2
-    Body_Frame_Detailing = 2
-  Body_Frame_Cleanliness = 2
-              Mods_Paint = 2
-               Mods_Body = 2
-               Mods_Wrap = 0
-               Mods_Rims = 4
-           Mods_Interior = 4
-              Mods_Other = 4
-                Mods_ICE = 6
-        Mods_Aftermarket = 2
-                Mods_WIP = 0
-            Mods_Overall = 4
-                  Scores = 62
-
-                  Car_ID = 124
-             Racer_Turbo = 0
-      Racer_Supercharged = 6
-       Racer_Performance = 4
-        Racer_Horsepower = 2
-             Car_Overall = 4
-    Engine_Modifications = 6
-      Engine_Performance = 6
-           Engine_Chrome = 4
-        Engine_Detailing = 4
-      Engine_Cleanliness = 4
-Body_Frame_Undercarriage = 6
-   Body_Frame_Suspension = 6
-       Body_Frame_Chrome = 6
-    Body_Frame_Detailing = 6
-  Body_Frame_Cleanliness = 6
-              Mods_Paint = 4
-               Mods_Body = 6
-               Mods_Wrap = 6
-               Mods_Rims = 6
-           Mods_Interior = 6
-              Mods_Other = 6
-                Mods_ICE = 4
-        Mods_Aftermarket = 6
-                Mods_WIP = 4
-            Mods_Overall = 6
-                  Scores = 124
-
-                  Car_ID = 222
-             Racer_Turbo = 0
-      Racer_Supercharged = 0
-       Racer_Performance = 0
-        Racer_Horsepower = 0
-             Car_Overall = 0
-    Engine_Modifications = 0
-      Engine_Performance = 0
-           Engine_Chrome = 0
-        Engine_Detailing = 6
-      Engine_Cleanliness = 6
-Body_Frame_Undercarriage = 6
-   Body_Frame_Suspension = 0
-       Body_Frame_Chrome = 0
-    Body_Frame_Detailing = 6
-  Body_Frame_Cleanliness = 6
-              Mods_Paint = 6
-               Mods_Body = 0
-               Mods_Wrap = 0
-               Mods_Rims = 0
-           Mods_Interior = 0
-              Mods_Other = 0
-                Mods_ICE = 0
-        Mods_Aftermarket = 0
-                Mods_WIP = 0
-            Mods_Overall = 4
-                  Scores = 40
-
-                  Car_ID = 207
-             Racer_Turbo = 0
-      Racer_Supercharged = 0
-       Racer_Performance = 2
-        Racer_Horsepower = 2
-             Car_Overall = 2
-    Engine_Modifications = 2
-      Engine_Performance = 2
-           Engine_Chrome = 2
-        Engine_Detailing = 0
-      Engine_Cleanliness = 4
-Body_Frame_Undercarriage = 2
-   Body_Frame_Suspension = 2
-       Body_Frame_Chrome = 2
-    Body_Frame_Detailing = 2
-  Body_Frame_Cleanliness = 2
-              Mods_Paint = 2
-               Mods_Body = 4
-               Mods_Wrap = 2
-               Mods_Rims = 2
-           Mods_Interior = 0
-              Mods_Other = 0
-                Mods_ICE = 0
-        Mods_Aftermarket = 2
-                Mods_WIP = 2
-            Mods_Overall = 0
-                  Scores = 40
-
-                  Car_ID = 167
-             Racer_Turbo = 0
-      Racer_Supercharged = 0
-       Racer_Performance = 2
-        Racer_Horsepower = 2
-             Car_Overall = 0
-    Engine_Modifications = 2
-      Engine_Performance = 2
-           Engine_Chrome = 0
-        Engine_Detailing = 0
-      Engine_Cleanliness = 0
-Body_Frame_Undercarriage = 0
-   Body_Frame_Suspension = 2
-       Body_Frame_Chrome = 0
-    Body_Frame_Detailing = 2
-  Body_Frame_Cleanliness = 2
-              Mods_Paint = 2
-               Mods_Body = 0
-               Mods_Wrap = 0
-               Mods_Rims = 2
-           Mods_Interior = 0
-              Mods_Other = 0
-                Mods_ICE = 0
-        Mods_Aftermarket = 0
-                Mods_WIP = 0
-            Mods_Overall = 2
-                  Scores = 20
-sqlite> --created the scores row
-sqlite> CRETE[K[KATE TABLE carRanks S[KAS {[K
-   ...> SELECT[K[K[K[K[K[K(selec[K[K[K[K[KSELECT * [K[KCARS[K[K[Kars.Car_ID, Cars.Year, Cars.Make, Cars.Model, Car_Score.score[K[K[K[K[KScores
-   ...> FROM Cars
-   ...> JOIN Car_Score
-   ...> ON Cars.Car_ID = Car_Score. [KCarID);
-Error: near "(": syntax error
-sqlite> CREATE TABLE active_employees AS 
-   ...>   SELECT *
-   ...>   FROM employees
-   ...>   WHERE hire_date IS NOT NULL;
-Error: no such table: employees
-sqlite> CRETE [K[K[K[K[K[KCREATE [K[K[K[K[K[K[KC[K--above was just an example from the internet i was trying to test
-sqlite> --above was just an example from the internet i was trying to test[C[C[C[C[C[C[C[C[36P  WHERE hire_date IS NOT NULL;[C[C[C[C[C[C[C[C--above was just an example from the internet i was trying to test[C[C[C[C[C[C[C[C[KCREATE TABLE carRank [K[KKS[K[Kks AS 
-   ...> SE[K[K
-carContestLab.db  data_lab2/        firstLog          secondLog         
-   ...> CREATE TABLE carRanks AS [C[C[C[C[C[C[C[C--above was just an example from the internet i was trying to test[C[C[C[C[C[C[C[C[36P  WHERE hire_date IS NOT NULL;[C[C[C[C[C[C[C[C--above was just an example from the internet i was trying to test[C[C[C[C[C[C[C[C[41PCREATE TABLE carRanks AS [C[C[C[C[C[C[C[C[K
-   ...> ;
-Error: near ";": syntax error
-sqlite> ;CREATE TABLE carRanks AS 
-   ...> N[K selec[K[K[K[K[KSELECT * 
-   ...>  FROM [K[K[K[K[K[K SELECT * [K;
-Error: no tables specified
-sqlite> ; SELECT * [C[C[C[C[C[C[C[C[15@CREATE TABLE carRanks AS[C
-   ...> CREATE TABLE carRanks AS [C[C[C[C[C[C[C[C;[K SELECT * [K[KSELECT Cars.Car_ID, Cars.Year, Cars.Make, Cars.Model, Car_Score.Scores[1P[1P[1P[1P[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
-   ...>  FROM SCOR[K[K[K[KCars
-   ...>  JOIN c[KCar_Score 
-   ...>  ON Cars.Car_ID = Car_Score.Car(D[K[KID[K[K_ID;
-sqlite>  ON Cars.Car_ID = Car_Score.Car_ID;[C[C[C[C[C[C[C[C[C[19PJOIN Car_Score [C[C[C[C[C[C[C[C[CON Cars.Car_ID = Car_Score.Car_ID;[C[C[C[C[C[C[C[C[K.[KSELEC [Kt * [K[K[K[K[K[K[K[K[K.MODE [K[K[K[K[K[K.mode line[K[K[K[Kcoluns[K[Kmns
-sqlite> .l[K[KS[Kselect * from carRanks limit 5;
-48          2015        Acura       TLX         62        
-124         2015        Jeep        Wrangler    124       
-222         2015        Lexus       Is250       40        
-207         1993        Honda       Civic eG    40        
-167         2016        Ford        Mystang     20        
-sqlite> .headers on
-sqlite> .headers on[C[C[C[C[C[C[C[Cselect * from carRanks limit 5;
-Car_ID      Year        Make        Model       Scores    
-----------  ----------  ----------  ----------  ----------
-48          2015        Acura       TLX         62        
-124         2015        Jeep        Wrangler    124       
-222         2015        Lexus       Is250       40        
-207         1993        Honda       Civic eG    40        
-167         2016        Ford        Mystang     20        
-sqlite> select * from carRanks limit 5;[C[C[C[C[C[C[C[C[20P.headers on[C[C[C[C[C[C[C[Cselect * from carRanks limit 5; ;O;R;D;E;R; ;B;Y; ;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;[1P;O;R;D;E;R; ;B;Y; ;S;c;o;r;e;s; ;D;E;S;C; ;l;i;m;i;t; ;5;
-Car_ID      Year        Make        Model       Scores    
-----------  ----------  ----------  ----------  ----------
-128         2010        Infiniti    G37         128       
-124         2015        Jeep        Wrangler    124       
-15          2014        Audi        S4          120       
-113         2012        Acura       Tsx sportw  116       
-83          2014        Honda       Accord      112       
-sqlite> ALTER[K[K[K[K[Kalter table car t[K[KRanks add column [K
-   ...> Rank INT;
-sqlite> .SCHE[K[K[K[K[K.schema carRanks
-CREATE TABLE carRanks(
+[?1034hsqlite> .tables
+Car_Score      Judges         csvData      
+Cars           carRanks       orderedScores
+sqlite> .schema orderedScores
+CREATE TABLE orderedScores(
   Car_ID INT,
   Year INT,
   Make TEXT,
   Model TEXT,
-  Scores INT
-, Rank INT);
-sqlite> SLEC[K[K[KELECT [K[K[K[K[K[K[KALTER TABLE[K[K[K[K[K[K[K[K[K[K[KSELECT rowid FROM carRanks
-   ...> ;
-rowid     
-----------
-1         
-2         
-3         
-4         
-5         
-6         
-7         
-8         
-9         
-10        
-11        
-12        
-13        
-14        
-15        
-16        
-17        
-18        
-19        
-20        
-21        
-22        
-23        
-24        
-25        
-26        
-27        
-28        
-29        
-30        
-31        
-32        
-33        
-34        
-35        
-36        
-37        
-38        
-39        
-40        
-41        
-42        
-43        
-44        
-45        
-46        
-47        
-48        
-49        
-50        
-51        
-52        
-53        
-54        
-55        
-56        
-57        
-58        
-59        
-60        
-61        
-62        
-63        
-64        
-65        
-66        
-67        
-68        
-69        
-70        
-71        
-72        
-73        
-74        
-75        
-76        
-77        
-78        
-79        
-80        
-81        
-82        
-83        
-84        
-85        
-86        
-87        
-88        
-89        
-90        
-91        
-92        
-93        
-94        
-95        
-96        
-97        
-98        
-99        
-100       
-101       
-102       
-103       
-104       
-105       
-106       
-107       
-108       
-109       
-110       
-111       
-112       
-113       
-114       
-115       
-116       
-117       
-118       
-119       
-120       
-121       
-122       
-123       
-124       
-125       
-126       
-127       
-128       
-129       
-130       
-131       
-132       
-133       
-134       
-135       
-136       
-137       
-138       
-139       
-140       
-141       
-142       
-143       
-144       
-145       
-146       
-147       
-148       
-149       
-150       
-151       
-152       
-153       
-154       
-155       
-156       
-157       
-158       
-159       
-160       
-161       
-162       
-163       
-164       
-165       
-166       
-167       
-sqlite> S[KUPDATE TABLE carRanks[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KALTER TABLE carRak[Knks
-   ...> SELECT * FROM carRanks
-   ...> ORDER BY Scores DESC;
-Error: near "SELECT": syntax error
-sqlite> c[K.tables
-Car_Score       Judges          carRanks        csvData       
-Cars            allContestData  contestData   
-sqlite> DROP [K[K[K[K[KDROP TABLE contestData
-   ...> ;
-sqlite> D[K;DROP TABLE contestData[K[K[K[K[K[K[K[K[K[K[Kap[KllCpn[K[KontestData;
-sqlite> CREATE TABLE ore[KderedR[K[KdRa[K[KScores AS 
-   ...>  SELECT * FROM cara[KRAnks [K[K[K[K[KankS
-   ...> ;
-sqlite> s[Kdrop orderedScored[Ks
-   ...> ;
-Error: near "orderedScores": syntax error
-sqlite> D[K;drop orderedScoresTorderedScoresAorderedScoresBorderedScoresLorderedScoresEorderedScores orderedScores[C[C[C[C[C[C[C[C[C[C[C[C[C;
-sqlite> drop TABLE orderedScores;[C[C[C[C[C[C[C[C;[Kdrop orderedScores[C[C[C[C[C[C[C[C;[K SELECT * FROM carRankS[C[C[C[C[C[C[C[CCREATE TABLE orderedScores AS 
-   ...>  SELECT * from cr[KarRAnks[K[K[K[Kanks
-   ...>  ORDER BY Scores DESC;
-sqlite> SLEE[K[K[KELECT * for[K[Krom orderedScores limit 5;
-Car_ID      Year        Make        Model       Scores      Rank      
-----------  ----------  ----------  ----------  ----------  ----------
-128         2010        Infiniti    G37         128                   
-124         2015        Jeep        Wrangler    124                   
-15          2014        Audi        S4          120                   
-113         2012        Acura       Tsx sportw  116                   
-83          2014        Honda       Accord      112                   
-sqlite> CREATE [K[K[K[K[K[K[Kselec[K[K[K[K[Kcreate [K[K[K[K[K[K[KINSERT INTO [K[K[K[K[K[K[K[K[K[K[K[Kupdate car[K[K[KorderedScores
-   ...> set r[KRank = rowid
-   ...> ;
-sqlite> ;set Rank = rowid[C[C[C[C[C[C[C[Cupdate orderedScores[C[C[C[C[C[C[C[CSELECT * from orderedScores limit 5;
-Car_ID      Year        Make        Model       Scores      Rank      
-----------  ----------  ----------  ----------  ----------  ----------
+  Scores INT,
+  Rank INT
+);
+sqlite> .schema orderedScores[C[C[C[C[C[C[C[C[Ctables[K[3PexitSELECT * FROM orderedScores;[C[C[C[C[C[C[C[C[8P.output extract1.csv[C[C[C[C[C[C[C[CSELECT * FROM orderedScores;
+128|2010|Infiniti|G37|128|1
+124|2015|Jeep|Wrangler|124|2
+15|2014|Audi|S4|120|3
+113|2012|Acura|Tsx sportwagon|116|4
+83|2014|Honda|Accord|112|5
+112|2008|Acura|TL|110|6
+65|2009|Honda|Fit|106|7
+50|2015|Acura|TLX|102|8
+31|2007|Honda|Fit|102|9
+91|2010|Mitsu|Lancer|102|10
+216|2007|Chrystler|300|96|11
+228|2010|Nissan|370|92|12
+175|2006|Honda|Civic|92|13
+126|2010|Volkswagen|Eos|92|14
+13|2016|Honda|Civic 1.5t|92|15
+127|2013|Acura|Tsx|86|16
+63|2010|Honda|Civic|86|17
+161|2012|Nissan|370z|84|18
+3|2011|Nissan|370|84|19
+180|2011|Volkswagen|Gti|82|20
+57|2015|Scion|Frs|80|21
+25|2012|Mercedes|C250|78|22
+106|2007|Acura|Tl type s|78|23
+36|2016|Subaru|WRX|74|24
+178|2009|Honda|Oddesy|72|25
+39|2011|Honda|Civic|72|26
+103|2010|Acura|Tsx|72|27
+84|2012|Mercedes|Cl63amg|70|28
+33|2015|Subaru|Sti|68|29
+30|2012|Hyundai|Celoster|66|30
+123|2006|Lexus|Sc430|66|31
+1051|2006|Acura|Tsx|66|32
+218|2010|Chevy|Camaro|64|33
+41|2012|Acura|Tsx|64|34
+158|2007|Nissan|350z|64|35
+48|2015|Acura|TLX|62|36
+21|2009|Subaru|WRX|62|37
+23|1998|Subaru|Legacy|62|38
+12|1990|Nissan|240|62|39
+38|2017|Hyundai|Elantra sport|62|40
+35|2016|Honda|Civic|60|41
+53|2013|Subaru|WRX|60|42
+142|1993|Toyota|Supra|58|43
+110|2011|Toyota|Camry|58|44
+156|2014|Volkswagen|Gli|56|45
+115|2001|Honda|Crv|56|46
+43|2011|Toyota|4 Runner|54|47
+37|2015|Subaru|Sti|54|48
+137|2017|Ford|Focus rs|54|49
+6|2016|Volkswagen|Golf r|54|50
+134|2013|Subaru|WRX|52|51
+225|2016|Acura|TLX|52|52
+51|2015|Subaru|WRX|50|53
+5|2003|Acura|Rsx|50|54
+170|2014|Chevy|Cruze|50|55
+189|2012|Toyota|Fj cruiser|50|56
+88|2008|Honda|Accord|48|57
+104|2014|Honda|Civic si|48|58
+52|2007|Mazda|Speed 3|48|59
+211|2004|Acura|Tsx|48|60
+232|2018|Subaru|WRX|46|61
+8|1991|Nissan|Skyline|44|62
+140|1995|Mitsu|Evo8|44|63
+Showcar|2014|Nissan|Gtr|44|64
+121|2012|Acura|TL|44|65
+118|1993|Honda|Civic|44|66
+9|1996|Nissan|240|44|67
+122|2011|Infiniti|M37s|44|68
+85|2017|Honda|Accord|42|69
+153|2017|Subaru|Brz|42|70
+56|2009|Volkswagen|Jetta|42|71
+49|1997|Acura|Integra|42|72
+45|2006|Acura|TL|42|73
+222|2015|Lexus|Is250|40|74
+207|1993|Honda|Civic eG|40|75
+176|2014|Mitsu|Lancer|40|76
+44|2018|Honda|Civic si|40|77
+19|2001|Mitsu|Evo7|40|78
+20|2009|Infiniti|G37|38|79
+99|2014|Honda|Civic si|38|80
+145|1990|Volkswagen|Gti|38|81
+179|2004|Volkswagen|R32|38|82
+18|2015|Audi|S3|38|83
+200|2016|Subaru|WRX|36|84
+162|2014|Nissan|370z|36|85
+78|2015|Mazda|6|36|86
+10|2001|Nissan|S15|34|87
+17|2016|Mercedes|C43|34|88
+4341|1992|Nissan|Rps13|32|89
+46|2008|Volkswagen|R32|32|90
+24|2013|Subaru|BRZ|32|91
+7|2014|Nissan|Sentra|30|92
+181|2003|Volkswagen|Gti|30|93
+120|2014|Ford|Focus st|30|94
+92|2017|Hyundai|Elantra sport|30|95
+11|1991|Nissan|Skyline|30|96
+59|2012|Volkswagen|Golf|28|97
+116|2008|Audi|A4|28|98
+238|1982|Volkswagen|Rabbit|28|99
+144|2016|Volkswagen|Gti|28|100
+14|1990|Nissan|Skyline|26|101
+98|2012|Mercedes|C63|26|102
+114|2010|Volkswagen|Gti|26|103
+219|2016|Ford|Focus rs|26|104
+141|1993|Mazda|Miata|26|105
+187|2007|Subaru|Legacy|26|106
+242|2014|Nissan|Maxima|26|107
+2|2016|Bmw|M2|24|108
+130|2016|Honda|Civic si|24|109
+241|2007|Toyota|Camry|24|110
+22|2007|Honda|Civic|24|111
+81|2016|Volkswagen|GTI|24|112
+163|2013|Mitsu|Ralliart|22|113
+93|2005|Acura|TL|22|114
+150|2006|Nissan|350z|22|115
+100|2006|Volvo|S60r|22|116
+172|2014|Bmw|4|22|117
+167|2016|Ford|Mystang|20|118
+230|2004|Acura|Tsx|20|119
+182|2012|Volkswagen|Cc|20|120
+235|2013|Scion|Frs|20|121
+79|1993|Mazda|Miata|18|122
+226|2008|Honda|Accord|18|123
+34|2010|Honda|Fit|18|124
+183|2005|Volkswagen|Jetta|16|125
+89|2014|Honda|Civic si|16|126
+Vip|2008|Volkswagen|Gli|16|127
+159|2013|Hyundai|Gen coupe|14|128
+67|2015|Subaru|Sti|14|129
+108|2013|Audi|S4|14|130
+220|2004|Audi|A4|14|131
+186|2012|Volkswagen|Gli|14|132
+4|2007|Honda|Civic|14|133
+193|2014|Nissan|Ssntra|14|134
+177|2005|Volkswagen|Jetta gli|12|135
+95|2004|Infiniti|G35|12|136
+76|2005|Subaru|Sti|12|137
+68|2013|Nissan|Altima|10|138
+102|2015|Honda|Accord|10|139
+111|2007|Bmw|328i|10|140
+243|2008|Toyota|Matrix|10|141
+16|2008|Nissan|350z|10|142
+96|2017|Volkswagen|Gti|10|143
+138|1990|Mazda|Miata|10|144
+94|2004|Volkswagen|Gti|10|145
+190|1995|Lexus|Sc300|10|146
+237|1987|Volkswagen|Jetta|10|147
+184|2010|Volkswagen|Cc|8|148
+42|2001|Dodge|Viper|8|149
+28|1995|Bmw|318xi|8|150
+185|2013|Volkswagen|Jett|8|151
+74|2015|Honda|Accord|8|152
+69|2018|Subaru|WRX|8|153
+86|1996|Volkswagen|Jetta|8|154
+1|2012|Subaru|WRX|6|155
+75|2012|Subaru|WRX|6|156
+212|2001|Lexus|Is300|6|157
+40|2007|Subaru|Legacy|6|158
+71|2008|Acura|TL|6|159
+64|2004|Subaru|Forester|6|160
+66|2010|Volkswagen|Gti|4|161
+72|2016|Honda|Civic si|4|162
+174|2006|Acura|Rsx|4|163
+197|2010|Audi|A4|2|164
+101|2014|Honda|Civic|0|165
+0|2015|Chevy|Camaro|0|166
+70|2014|Honda|Civic|0|167
+sqlite> .mode column
+sqlite> .mode column
+sqlite> .mode column
+sqlite> .mode column[C[C[C[C[C[C[C[CSELECT * FROM orderedScores;[C[C[C[C[C[C[C[C[7P.schema orderedScores[C[C[C[C[C[C[C[CSELECT * FROM orderedScores;
 128         2010        Infiniti    G37         128         1         
 124         2015        Jeep        Wrangler    124         2         
 15          2014        Audi        S4          120         3         
 113         2012        Acura       Tsx sportw  116         4         
 83          2014        Honda       Accord      112         5         
-sqlite> SELECT * from orderedScores limit 5;[C[C[C[C[C[C[C[C;[KSELECT * from orderedScores limit 5;[K[K[K[K[K[K[K[K[K;
+112         2008        Acura       TL          110         6         
+65          2009        Honda       Fit         106         7         
+50          2015        Acura       TLX         102         8         
+31          2007        Honda       Fit         102         9         
+91          2010        Mitsu       Lancer      102         10        
+216         2007        Chrystler   300         96          11        
+228         2010        Nissan      370         92          12        
+175         2006        Honda       Civic       92          13        
+126         2010        Volkswagen  Eos         92          14        
+13          2016        Honda       Civic 1.5t  92          15        
+127         2013        Acura       Tsx         86          16        
+63          2010        Honda       Civic       86          17        
+161         2012        Nissan      370z        84          18        
+3           2011        Nissan      370         84          19        
+180         2011        Volkswagen  Gti         82          20        
+57          2015        Scion       Frs         80          21        
+25          2012        Mercedes    C250        78          22        
+106         2007        Acura       Tl type s   78          23        
+36          2016        Subaru      WRX         74          24        
+178         2009        Honda       Oddesy      72          25        
+39          2011        Honda       Civic       72          26        
+103         2010        Acura       Tsx         72          27        
+84          2012        Mercedes    Cl63amg     70          28        
+33          2015        Subaru      Sti         68          29        
+30          2012        Hyundai     Celoster    66          30        
+123         2006        Lexus       Sc430       66          31        
+1051        2006        Acura       Tsx         66          32        
+218         2010        Chevy       Camaro      64          33        
+41          2012        Acura       Tsx         64          34        
+158         2007        Nissan      350z        64          35        
+48          2015        Acura       TLX         62          36        
+21          2009        Subaru      WRX         62          37        
+23          1998        Subaru      Legacy      62          38        
+12          1990        Nissan      240         62          39        
+38          2017        Hyundai     Elantra sp  62          40        
+35          2016        Honda       Civic       60          41        
+53          2013        Subaru      WRX         60          42        
+142         1993        Toyota      Supra       58          43        
+110         2011        Toyota      Camry       58          44        
+156         2014        Volkswagen  Gli         56          45        
+115         2001        Honda       Crv         56          46        
+43          2011        Toyota      4 Runner    54          47        
+37          2015        Subaru      Sti         54          48        
+137         2017        Ford        Focus rs    54          49        
+6           2016        Volkswagen  Golf r      54          50        
+134         2013        Subaru      WRX         52          51        
+225         2016        Acura       TLX         52          52        
+51          2015        Subaru      WRX         50          53        
+5           2003        Acura       Rsx         50          54        
+170         2014        Chevy       Cruze       50          55        
+189         2012        Toyota      Fj cruiser  50          56        
+88          2008        Honda       Accord      48          57        
+104         2014        Honda       Civic si    48          58        
+52          2007        Mazda       Speed 3     48          59        
+211         2004        Acura       Tsx         48          60        
+232         2018        Subaru      WRX         46          61        
+8           1991        Nissan      Skyline     44          62        
+140         1995        Mitsu       Evo8        44          63        
+Showcar     2014        Nissan      Gtr         44          64        
+121         2012        Acura       TL          44          65        
+118         1993        Honda       Civic       44          66        
+9           1996        Nissan      240         44          67        
+122         2011        Infiniti    M37s        44          68        
+85          2017        Honda       Accord      42          69        
+153         2017        Subaru      Brz         42          70        
+56          2009        Volkswagen  Jetta       42          71        
+49          1997        Acura       Integra     42          72        
+45          2006        Acura       TL          42          73        
+222         2015        Lexus       Is250       40          74        
+207         1993        Honda       Civic eG    40          75        
+176         2014        Mitsu       Lancer      40          76        
+44          2018        Honda       Civic si    40          77        
+19          2001        Mitsu       Evo7        40          78        
+20          2009        Infiniti    G37         38          79        
+99          2014        Honda       Civic si    38          80        
+145         1990        Volkswagen  Gti         38          81        
+179         2004        Volkswagen  R32         38          82        
+18          2015        Audi        S3          38          83        
+200         2016        Subaru      WRX         36          84        
+162         2014        Nissan      370z        36          85        
+78          2015        Mazda       6           36          86        
+10          2001        Nissan      S15         34          87        
+17          2016        Mercedes    C43         34          88        
+4341        1992        Nissan      Rps13       32          89        
+46          2008        Volkswagen  R32         32          90        
+24          2013        Subaru      BRZ         32          91        
+7           2014        Nissan      Sentra      30          92        
+181         2003        Volkswagen  Gti         30          93        
+120         2014        Ford        Focus st    30          94        
+92          2017        Hyundai     Elantra sp  30          95        
+11          1991        Nissan      Skyline     30          96        
+59          2012        Volkswagen  Golf        28          97        
+116         2008        Audi        A4          28          98        
+238         1982        Volkswagen  Rabbit      28          99        
+144         2016        Volkswagen  Gti         28          100       
+14          1990        Nissan      Skyline     26          101       
+98          2012        Mercedes    C63         26          102       
+114         2010        Volkswagen  Gti         26          103       
+219         2016        Ford        Focus rs    26          104       
+141         1993        Mazda       Miata       26          105       
+187         2007        Subaru      Legacy      26          106       
+242         2014        Nissan      Maxima      26          107       
+2           2016        Bmw         M2          24          108       
+130         2016        Honda       Civic si    24          109       
+241         2007        Toyota      Camry       24          110       
+22          2007        Honda       Civic       24          111       
+81          2016        Volkswagen  GTI         24          112       
+163         2013        Mitsu       Ralliart    22          113       
+93          2005        Acura       TL          22          114       
+150         2006        Nissan      350z        22          115       
+100         2006        Volvo       S60r        22          116       
+172         2014        Bmw         4           22          117       
+167         2016        Ford        Mystang     20          118       
+230         2004        Acura       Tsx         20          119       
+182         2012        Volkswagen  Cc          20          120       
+235         2013        Scion       Frs         20          121       
+79          1993        Mazda       Miata       18          122       
+226         2008        Honda       Accord      18          123       
+34          2010        Honda       Fit         18          124       
+183         2005        Volkswagen  Jetta       16          125       
+89          2014        Honda       Civic si    16          126       
+Vip         2008        Volkswagen  Gli         16          127       
+159         2013        Hyundai     Gen coupe   14          128       
+67          2015        Subaru      Sti         14          129       
+108         2013        Audi        S4          14          130       
+220         2004        Audi        A4          14          131       
+186         2012        Volkswagen  Gli         14          132       
+4           2007        Honda       Civic       14          133       
+193         2014        Nissan      Ssntra      14          134       
+177         2005        Volkswagen  Jetta gli   12          135       
+95          2004        Infiniti    G35         12          136       
+76          2005        Subaru      Sti         12          137       
+68          2013        Nissan      Altima      10          138       
+102         2015        Honda       Accord      10          139       
+111         2007        Bmw         328i        10          140       
+243         2008        Toyota      Matrix      10          141       
+16          2008        Nissan      350z        10          142       
+96          2017        Volkswagen  Gti         10          143       
+138         1990        Mazda       Miata       10          144       
+94          2004        Volkswagen  Gti         10          145       
+190         1995        Lexus       Sc300       10          146       
+237         1987        Volkswagen  Jetta       10          147       
+184         2010        Volkswagen  Cc          8           148       
+42          2001        Dodge       Viper       8           149       
+28          1995        Bmw         318xi       8           150       
+185         2013        Volkswagen  Jett        8           151       
+74          2015        Honda       Accord      8           152       
+69          2018        Subaru      WRX         8           153       
+86          1996        Volkswagen  Jetta       8           154       
+1           2012        Subaru      WRX         6           155       
+75          2012        Subaru      WRX         6           156       
+212         2001        Lexus       Is300       6           157       
+40          2007        Subaru      Legacy      6           158       
+71          2008        Acura       TL          6           159       
+64          2004        Subaru      Forester    6           160       
+66          2010        Volkswagen  Gti         4           161       
+72          2016        Honda       Civic si    4           162       
+174         2006        Acura       Rsx         4           163       
+197         2010        Audi        A4          2           164       
+101         2014        Honda       Civic       0           165       
+0           2015        Chevy       Camaro      0           166       
+70          2014        Honda       Civic       0           167       
+sqlite> SELECT * FROM orderedScores; ;O;R;D;E;R;E;D; ;B;Y; ;M;o;d;l;[1P;e;l;
+Error: near "BY": syntax error
+sqlite> .heard[K[Kders on
+sqlite> .headers on[C[C[C[C[C[C[C[CSELECT * FROM orderedScores ORDERED BY Model;[K[K[K[K[K[K[K[K[K[K[K[K[K [Kr [K[KR by model[K[K[K[K[KModel;
+Car_ID      Year        Make        Model       Scores      Rank      
+----------  ----------  ----------  ----------  ----------  ----------
+12          1990        Nissan      240         62          39        
+9           1996        Nissan      240         44          67        
+216         2007        Chrystler   300         96          11        
+28          1995        Bmw         318xi       8           150       
+111         2007        Bmw         328i        10          140       
+158         2007        Nissan      350z        64          35        
+150         2006        Nissan      350z        22          115       
+16          2008        Nissan      350z        10          142       
+228         2010        Nissan      370         92          12        
+3           2011        Nissan      370         84          19        
+161         2012        Nissan      370z        84          18        
+162         2014        Nissan      370z        36          85        
+172         2014        Bmw         4           22          117       
+43          2011        Toyota      4 Runner    54          47        
+78          2015        Mazda       6           36          86        
+116         2008        Audi        A4          28          98        
+220         2004        Audi        A4          14          131       
+197         2010        Audi        A4          2           164       
+83          2014        Honda       Accord      112         5         
+88          2008        Honda       Accord      48          57        
+85          2017        Honda       Accord      42          69        
+226         2008        Honda       Accord      18          123       
+102         2015        Honda       Accord      10          139       
+74          2015        Honda       Accord      8           152       
+68          2013        Nissan      Altima      10          138       
+24          2013        Subaru      BRZ         32          91        
+153         2017        Subaru      Brz         42          70        
+25          2012        Mercedes    C250        78          22        
+17          2016        Mercedes    C43         34          88        
+98          2012        Mercedes    C63         26          102       
+218         2010        Chevy       Camaro      64          33        
+0           2015        Chevy       Camaro      0           166       
+110         2011        Toyota      Camry       58          44        
+241         2007        Toyota      Camry       24          110       
+182         2012        Volkswagen  Cc          20          120       
+184         2010        Volkswagen  Cc          8           148       
+30          2012        Hyundai     Celoster    66          30        
+175         2006        Honda       Civic       92          13        
+63          2010        Honda       Civic       86          17        
+39          2011        Honda       Civic       72          26        
+35          2016        Honda       Civic       60          41        
+118         1993        Honda       Civic       44          66        
+22          2007        Honda       Civic       24          111       
+4           2007        Honda       Civic       14          133       
+101         2014        Honda       Civic       0           165       
+70          2014        Honda       Civic       0           167       
+13          2016        Honda       Civic 1.5t  92          15        
+207         1993        Honda       Civic eG    40          75        
+104         2014        Honda       Civic si    48          58        
+44          2018        Honda       Civic si    40          77        
+99          2014        Honda       Civic si    38          80        
+130         2016        Honda       Civic si    24          109       
+89          2014        Honda       Civic si    16          126       
+72          2016        Honda       Civic si    4           162       
+84          2012        Mercedes    Cl63amg     70          28        
+170         2014        Chevy       Cruze       50          55        
+115         2001        Honda       Crv         56          46        
+38          2017        Hyundai     Elantra sp  62          40        
+92          2017        Hyundai     Elantra sp  30          95        
+126         2010        Volkswagen  Eos         92          14        
+19          2001        Mitsu       Evo7        40          78        
+140         1995        Mitsu       Evo8        44          63        
+65          2009        Honda       Fit         106         7         
+31          2007        Honda       Fit         102         9         
+34          2010        Honda       Fit         18          124       
+189         2012        Toyota      Fj cruiser  50          56        
+137         2017        Ford        Focus rs    54          49        
+219         2016        Ford        Focus rs    26          104       
+120         2014        Ford        Focus st    30          94        
+64          2004        Subaru      Forester    6           160       
+57          2015        Scion       Frs         80          21        
+235         2013        Scion       Frs         20          121       
+95          2004        Infiniti    G35         12          136       
+128         2010        Infiniti    G37         128         1         
+20          2009        Infiniti    G37         38          79        
+81          2016        Volkswagen  GTI         24          112       
+159         2013        Hyundai     Gen coupe   14          128       
+156         2014        Volkswagen  Gli         56          45        
+Vip         2008        Volkswagen  Gli         16          127       
+186         2012        Volkswagen  Gli         14          132       
+59          2012        Volkswagen  Golf        28          97        
+6           2016        Volkswagen  Golf r      54          50        
+180         2011        Volkswagen  Gti         82          20        
+145         1990        Volkswagen  Gti         38          81        
+181         2003        Volkswagen  Gti         30          93        
+144         2016        Volkswagen  Gti         28          100       
+114         2010        Volkswagen  Gti         26          103       
+96          2017        Volkswagen  Gti         10          143       
+94          2004        Volkswagen  Gti         10          145       
+66          2010        Volkswagen  Gti         4           161       
+Showcar     2014        Nissan      Gtr         44          64        
+49          1997        Acura       Integra     42          72        
+222         2015        Lexus       Is250       40          74        
+212         2001        Lexus       Is300       6           157       
+185         2013        Volkswagen  Jett        8           151       
+56          2009        Volkswagen  Jetta       42          71        
+183         2005        Volkswagen  Jetta       16          125       
+237         1987        Volkswagen  Jetta       10          147       
+86          1996        Volkswagen  Jetta       8           154       
+177         2005        Volkswagen  Jetta gli   12          135       
+91          2010        Mitsu       Lancer      102         10        
+176         2014        Mitsu       Lancer      40          76        
+23          1998        Subaru      Legacy      62          38        
+187         2007        Subaru      Legacy      26          106       
+40          2007        Subaru      Legacy      6           158       
+2           2016        Bmw         M2          24          108       
+122         2011        Infiniti    M37s        44          68        
+243         2008        Toyota      Matrix      10          141       
+242         2014        Nissan      Maxima      26          107       
+141         1993        Mazda       Miata       26          105       
+79          1993        Mazda       Miata       18          122       
+138         1990        Mazda       Miata       10          144       
+167         2016        Ford        Mystang     20          118       
+178         2009        Honda       Oddesy      72          25        
+179         2004        Volkswagen  R32         38          82        
+46          2008        Volkswagen  R32         32          90        
+238         1982        Volkswagen  Rabbit      28          99        
+163         2013        Mitsu       Ralliart    22          113       
+4341        1992        Nissan      Rps13       32          89        
+5           2003        Acura       Rsx         50          54        
+174         2006        Acura       Rsx         4           163       
+10          2001        Nissan      S15         34          87        
+18          2015        Audi        S3          38          83        
+15          2014        Audi        S4          120         3         
+108         2013        Audi        S4          14          130       
+100         2006        Volvo       S60r        22          116       
+190         1995        Lexus       Sc300       10          146       
+123         2006        Lexus       Sc430       66          31        
+7           2014        Nissan      Sentra      30          92        
+8           1991        Nissan      Skyline     44          62        
+11          1991        Nissan      Skyline     30          96        
+14          1990        Nissan      Skyline     26          101       
+52          2007        Mazda       Speed 3     48          59        
+193         2014        Nissan      Ssntra      14          134       
+33          2015        Subaru      Sti         68          29        
+37          2015        Subaru      Sti         54          48        
+67          2015        Subaru      Sti         14          129       
+76          2005        Subaru      Sti         12          137       
+142         1993        Toyota      Supra       58          43        
+112         2008        Acura       TL          110         6         
+121         2012        Acura       TL          44          65        
+45          2006        Acura       TL          42          73        
+93          2005        Acura       TL          22          114       
+71          2008        Acura       TL          6           159       
+50          2015        Acura       TLX         102         8         
+48          2015        Acura       TLX         62          36        
+225         2016        Acura       TLX         52          52        
+106         2007        Acura       Tl type s   78          23        
+127         2013        Acura       Tsx         86          16        
+103         2010        Acura       Tsx         72          27        
+1051        2006        Acura       Tsx         66          32        
+41          2012        Acura       Tsx         64          34        
+211         2004        Acura       Tsx         48          60        
+230         2004        Acura       Tsx         20          119       
+113         2012        Acura       Tsx sportw  116         4         
+42          2001        Dodge       Viper       8           149       
+36          2016        Subaru      WRX         74          24        
+21          2009        Subaru      WRX         62          37        
+53          2013        Subaru      WRX         60          42        
+134         2013        Subaru      WRX         52          51        
+51          2015        Subaru      WRX         50          53        
+232         2018        Subaru      WRX         46          61        
+200         2016        Subaru      WRX         36          84        
+69          2018        Subaru      WRX         8           153       
+1           2012        Subaru      WRX         6           155       
+75          2012        Subaru      WRX         6           156       
+124         2015        Jeep        Wrangler    124         2         
+sqlite> SELECT * FROM orderedScores ORDER by Model;[C\;\;[1P;[1P;[1P;[1P;[1P;[1P;a;k;e;
+Car_ID      Year        Make        Model           Scores      Rank      
+----------  ----------  ----------  --------------  ----------  ----------
+113         2012        Acura       Tsx sportwagon  116         4         
+112         2008        Acura       TL              110         6         
+50          2015        Acura       TLX             102         8         
+127         2013        Acura       Tsx             86          16        
+106         2007        Acura       Tl type s       78          23        
+103         2010        Acura       Tsx             72          27        
+1051        2006        Acura       Tsx             66          32        
+41          2012        Acura       Tsx             64          34        
+48          2015        Acura       TLX             62          36        
+225         2016        Acura       TLX             52          52        
+5           2003        Acura       Rsx             50          54        
+211         2004        Acura       Tsx             48          60        
+121         2012        Acura       TL              44          65        
+49          1997        Acura       Integra         42          72        
+45          2006        Acura       TL              42          73        
+93          2005        Acura       TL              22          114       
+230         2004        Acura       Tsx             20          119       
+71          2008        Acura       TL              6           159       
+174         2006        Acura       Rsx             4           163       
+15          2014        Audi        S4              120         3         
+18          2015        Audi        S3              38          83        
+116         2008        Audi        A4              28          98        
+108         2013        Audi        S4              14          130       
+220         2004        Audi        A4              14          131       
+197         2010        Audi        A4              2           164       
+2           2016        Bmw         M2              24          108       
+172         2014        Bmw         4               22          117       
+111         2007        Bmw         328i            10          140       
+28          1995        Bmw         318xi           8           150       
+218         2010        Chevy       Camaro          64          33        
+170         2014        Chevy       Cruze           50          55        
+0           2015        Chevy       Camaro          0           166       
+216         2007        Chrystler   300             96          11        
+42          2001        Dodge       Viper           8           149       
+137         2017        Ford        Focus rs        54          49        
+120         2014        Ford        Focus st        30          94        
+219         2016        Ford        Focus rs        26          104       
+167         2016        Ford        Mystang         20          118       
+83          2014        Honda       Accord          112         5         
+65          2009        Honda       Fit             106         7         
+31          2007        Honda       Fit             102         9         
+175         2006        Honda       Civic           92          13        
+13          2016        Honda       Civic 1.5t      92          15        
+63          2010        Honda       Civic           86          17        
+178         2009        Honda       Oddesy          72          25        
+39          2011        Honda       Civic           72          26        
+35          2016        Honda       Civic           60          41        
+115         2001        Honda       Crv             56          46        
+88          2008        Honda       Accord          48          57        
+104         2014        Honda       Civic si        48          58        
+118         1993        Honda       Civic           44          66        
+85          2017        Honda       Accord          42          69        
+207         1993        Honda       Civic eG        40          75        
+44          2018        Honda       Civic si        40          77        
+99          2014        Honda       Civic si        38          80        
+130         2016        Honda       Civic si        24          109       
+22          2007        Honda       Civic           24          111       
+226         2008        Honda       Accord          18          123       
+34          2010        Honda       Fit             18          124       
+89          2014        Honda       Civic si        16          126       
+4           2007        Honda       Civic           14          133       
+102         2015        Honda       Accord          10          139       
+74          2015        Honda       Accord          8           152       
+72          2016        Honda       Civic si        4           162       
+101         2014        Honda       Civic           0           165       
+70          2014        Honda       Civic           0           167       
+30          2012        Hyundai     Celoster        66          30        
+38          2017        Hyundai     Elantra sport   62          40        
+92          2017        Hyundai     Elantra sport   30          95        
+159         2013        Hyundai     Gen coupe       14          128       
+128         2010        Infiniti    G37             128         1         
+122         2011        Infiniti    M37s            44          68        
+20          2009        Infiniti    G37             38          79        
+95          2004        Infiniti    G35             12          136       
+124         2015        Jeep        Wrangler        124         2         
+123         2006        Lexus       Sc430           66          31        
+222         2015        Lexus       Is250           40          74        
+190         1995        Lexus       Sc300           10          146       
+212         2001        Lexus       Is300           6           157       
+52          2007        Mazda       Speed 3         48          59        
+78          2015        Mazda       6               36          86        
+141         1993        Mazda       Miata           26          105       
+79          1993        Mazda       Miata           18          122       
+138         1990        Mazda       Miata           10          144       
+25          2012        Mercedes    C250            78          22        
+84          2012        Mercedes    Cl63amg         70          28        
+17          2016        Mercedes    C43             34          88        
+98          2012        Mercedes    C63             26          102       
+91          2010        Mitsu       Lancer          102         10        
+140         1995        Mitsu       Evo8            44          63        
+176         2014        Mitsu       Lancer          40          76        
+19          2001        Mitsu       Evo7            40          78        
+163         2013        Mitsu       Ralliart        22          113       
+228         2010        Nissan      370             92          12        
+161         2012        Nissan      370z            84          18        
+3           2011        Nissan      370             84          19        
+158         2007        Nissan      350z            64          35        
+12          1990        Nissan      240             62          39        
+8           1991        Nissan      Skyline         44          62        
+Showcar     2014        Nissan      Gtr             44          64        
+9           1996        Nissan      240             44          67        
+162         2014        Nissan      370z            36          85        
+10          2001        Nissan      S15             34          87        
+4341        1992        Nissan      Rps13           32          89        
+7           2014        Nissan      Sentra          30          92        
+11          1991        Nissan      Skyline         30          96        
+14          1990        Nissan      Skyline         26          101       
+242         2014        Nissan      Maxima          26          107       
+150         2006        Nissan      350z            22          115       
+193         2014        Nissan      Ssntra          14          134       
+68          2013        Nissan      Altima          10          138       
+16          2008        Nissan      350z            10          142       
+57          2015        Scion       Frs             80          21        
+235         2013        Scion       Frs             20          121       
+36          2016        Subaru      WRX             74          24        
+33          2015        Subaru      Sti             68          29        
+21          2009        Subaru      WRX             62          37        
+23          1998        Subaru      Legacy          62          38        
+53          2013        Subaru      WRX             60          42        
+37          2015        Subaru      Sti             54          48        
+134         2013        Subaru      WRX             52          51        
+51          2015        Subaru      WRX             50          53        
+232         2018        Subaru      WRX             46          61        
+153         2017        Subaru      Brz             42          70        
+200         2016        Subaru      WRX             36          84        
+24          2013        Subaru      BRZ             32          91        
+187         2007        Subaru      Legacy          26          106       
+67          2015        Subaru      Sti             14          129       
+76          2005        Subaru      Sti             12          137       
+69          2018        Subaru      WRX             8           153       
+1           2012        Subaru      WRX             6           155       
+75          2012        Subaru      WRX             6           156       
+40          2007        Subaru      Legacy          6           158       
+64          2004        Subaru      Forester        6           160       
+142         1993        Toyota      Supra           58          43        
+110         2011        Toyota      Camry           58          44        
+43          2011        Toyota      4 Runner        54          47        
+189         2012        Toyota      Fj cruiser      50          56        
+241         2007        Toyota      Camry           24          110       
+243         2008        Toyota      Matrix          10          141       
+126         2010        Volkswagen  Eos             92          14        
+180         2011        Volkswagen  Gti             82          20        
+156         2014        Volkswagen  Gli             56          45        
+6           2016        Volkswagen  Golf r          54          50        
+56          2009        Volkswagen  Jetta           42          71        
+145         1990        Volkswagen  Gti             38          81        
+179         2004        Volkswagen  R32             38          82        
+46          2008        Volkswagen  R32             32          90        
+181         2003        Volkswagen  Gti             30          93        
+59          2012        Volkswagen  Golf            28          97        
+238         1982        Volkswagen  Rabbit          28          99        
+144         2016        Volkswagen  Gti             28          100       
+114         2010        Volkswagen  Gti             26          103       
+81          2016        Volkswagen  GTI             24          112       
+182         2012        Volkswagen  Cc              20          120       
+183         2005        Volkswagen  Jetta           16          125       
+Vip         2008        Volkswagen  Gli             16          127       
+186         2012        Volkswagen  Gli             14          132       
+177         2005        Volkswagen  Jetta gli       12          135       
+96          2017        Volkswagen  Gti             10          143       
+94          2004        Volkswagen  Gti             10          145       
+237         1987        Volkswagen  Jetta           10          147       
+184         2010        Volkswagen  Cc              8           148       
+185         2013        Volkswagen  Jett            8           151       
+86          1996        Volkswagen  Jetta           8           154       
+66          2010        Volkswagen  Gti             4           161       
+100         2006        Volvo       S60r            22          116       
+sqlite> SELECT COUNT(*) FROM orderedScores GROUP BY Model;
+COUNT(*)  
+----------
+2         
+1         
+1         
+1         
+3         
+2         
+2         
+1         
+1         
+1         
+3         
+6         
+1         
+1         
+1         
+1         
+1         
+1         
+2         
+2         
+2         
+1         
+9         
+1         
+1         
+6         
+1         
+1         
+1         
+2         
+1         
+1         
+1         
+3         
+1         
+2         
+1         
+1         
+2         
+1         
+2         
+1         
+1         
+3         
+1         
+1         
+8         
+1         
+1         
+1         
+1         
+1         
+4         
+1         
+2         
+3         
+1         
+1         
+1         
+1         
+3         
+1         
+1         
+2         
+1         
+1         
+1         
+2         
+1         
+1         
+2         
+1         
+1         
+1         
+1         
+3         
+1         
+1         
+4         
+1         
+5         
+3         
+1         
+6         
+1         
+1         
+10        
+1         
+sqlite> SELECT COUNT(*) FROM orderedScores GROUP BY Model;[1@M[1@o[1@d[1@e[1@l[1@,[1@ 
+Model       COUNT(*)  
+----------  ----------
+240         2         
+300         1         
+318xi       1         
+328i        1         
+350z        3         
+370         2         
+370z        2         
+4           1         
+4 Runner    1         
+6           1         
+A4          3         
+Accord      6         
+Altima      1         
+BRZ         1         
+Brz         1         
+C250        1         
+C43         1         
+C63         1         
+Camaro      2         
+Camry       2         
+Cc          2         
+Celoster    1         
+Civic       9         
+Civic 1.5t  1         
+Civic eG    1         
+Civic si    6         
+Cl63amg     1         
+Cruze       1         
+Crv         1         
+Elantra sp  2         
+Eos         1         
+Evo7        1         
+Evo8        1         
+Fit         3         
+Fj cruiser  1         
+Focus rs    2         
+Focus st    1         
+Forester    1         
+Frs         2         
+G35         1         
+G37         2         
+GTI         1         
+Gen coupe   1         
+Gli         3         
+Golf        1         
+Golf r      1         
+Gti         8         
+Gtr         1         
+Integra     1         
+Is250       1         
+Is300       1         
+Jett        1         
+Jetta       4         
+Jetta gli   1         
+Lancer      2         
+Legacy      3         
+M2          1         
+M37s        1         
+Matrix      1         
+Maxima      1         
+Miata       3         
+Mystang     1         
+Oddesy      1         
+R32         2         
+Rabbit      1         
+Ralliart    1         
+Rps13       1         
+Rsx         2         
+S15         1         
+S3          1         
+S4          2         
+S60r        1         
+Sc300       1         
+Sc430       1         
+Sentra      1         
+Skyline     3         
+Speed 3     1         
+Ssntra      1         
+Sti         4         
+Supra       1         
+TL          5         
+TLX         3         
+Tl type s   1         
+Tsx         6         
+Tsx sportw  1         
+Viper       1         
+WRX         10        
+Wrangler    1         
+sqlite> SELECT Model, COUNT(*) FROM orderedScores GROUP BY Model;[C[1P[1P[1P[1P[1@a[1@k[1@e
+Make        COUNT(*)  
+----------  ----------
+Nissan      2         
+Chrystler   1         
+Bmw         1         
+Bmw         1         
+Nissan      3         
+Nissan      2         
+Nissan      2         
+Bmw         1         
+Toyota      1         
+Mazda       1         
+Audi        3         
+Honda       6         
+Nissan      1         
+Subaru      1         
+Subaru      1         
+Mercedes    1         
+Mercedes    1         
+Mercedes    1         
+Chevy       2         
+Toyota      2         
+Volkswagen  2         
+Hyundai     1         
+Honda       9         
+Honda       1         
+Honda       1         
+Honda       6         
+Mercedes    1         
+Chevy       1         
+Honda       1         
+Hyundai     2         
+Volkswagen  1         
+Mitsu       1         
+Mitsu       1         
+Honda       3         
+Toyota      1         
+Ford        2         
+Ford        1         
+Subaru      1         
+Scion       2         
+Infiniti    1         
+Infiniti    2         
+Volkswagen  1         
+Hyundai     1         
+Volkswagen  3         
+Volkswagen  1         
+Volkswagen  1         
+Volkswagen  8         
+Nissan      1         
+Acura       1         
+Lexus       1         
+Lexus       1         
+Volkswagen  1         
+Volkswagen  4         
+Volkswagen  1         
+Mitsu       2         
+Subaru      3         
+Bmw         1         
+Infiniti    1         
+Toyota      1         
+Nissan      1         
+Mazda       3         
+Ford        1         
+Honda       1         
+Volkswagen  2         
+Volkswagen  1         
+Mitsu       1         
+Nissan      1         
+Acura       2         
+Nissan      1         
+Audi        1         
+Audi        2         
+Volvo       1         
+Lexus       1         
+Lexus       1         
+Nissan      1         
+Nissan      3         
+Mazda       1         
+Nissan      1         
+Subaru      4         
+Toyota      1         
+Acura       5         
+Acura       3         
+Acura       1         
+Acura       6         
+Acura       1         
+Dodge       1         
+Subaru      10        
+Jeep        1         
+sqlite> SELECT Make, COUNT(*) FROM orderedScores GROUP BY Model;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@odel[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8P* FROM orderedScores ORDER by Make;odel;[C[C[C[C[C[C[C[C.headers on[K[C[C[C[C[C[C[C[CSELECT * FROM orderedScores ORDER by Model;[1Pake;
+Car_ID      Year        Make        Model           Scores      Rank      
+----------  ----------  ----------  --------------  ----------  ----------
+113         2012        Acura       Tsx sportwagon  116         4         
+112         2008        Acura       TL              110         6         
+50          2015        Acura       TLX             102         8         
+127         2013        Acura       Tsx             86          16        
+106         2007        Acura       Tl type s       78          23        
+103         2010        Acura       Tsx             72          27        
+1051        2006        Acura       Tsx             66          32        
+41          2012        Acura       Tsx             64          34        
+48          2015        Acura       TLX             62          36        
+225         2016        Acura       TLX             52          52        
+5           2003        Acura       Rsx             50          54        
+211         2004        Acura       Tsx             48          60        
+121         2012        Acura       TL              44          65        
+49          1997        Acura       Integra         42          72        
+45          2006        Acura       TL              42          73        
+93          2005        Acura       TL              22          114       
+230         2004        Acura       Tsx             20          119       
+71          2008        Acura       TL              6           159       
+174         2006        Acura       Rsx             4           163       
+15          2014        Audi        S4              120         3         
+18          2015        Audi        S3              38          83        
+116         2008        Audi        A4              28          98        
+108         2013        Audi        S4              14          130       
+220         2004        Audi        A4              14          131       
+197         2010        Audi        A4              2           164       
+2           2016        Bmw         M2              24          108       
+172         2014        Bmw         4               22          117       
+111         2007        Bmw         328i            10          140       
+28          1995        Bmw         318xi           8           150       
+218         2010        Chevy       Camaro          64          33        
+170         2014        Chevy       Cruze           50          55        
+0           2015        Chevy       Camaro          0           166       
+216         2007        Chrystler   300             96          11        
+42          2001        Dodge       Viper           8           149       
+137         2017        Ford        Focus rs        54          49        
+120         2014        Ford        Focus st        30          94        
+219         2016        Ford        Focus rs        26          104       
+167         2016        Ford        Mystang         20          118       
+83          2014        Honda       Accord          112         5         
+65          2009        Honda       Fit             106         7         
+31          2007        Honda       Fit             102         9         
+175         2006        Honda       Civic           92          13        
+13          2016        Honda       Civic 1.5t      92          15        
+63          2010        Honda       Civic           86          17        
+178         2009        Honda       Oddesy          72          25        
+39          2011        Honda       Civic           72          26        
+35          2016        Honda       Civic           60          41        
+115         2001        Honda       Crv             56          46        
+88          2008        Honda       Accord          48          57        
+104         2014        Honda       Civic si        48          58        
+118         1993        Honda       Civic           44          66        
+85          2017        Honda       Accord          42          69        
+207         1993        Honda       Civic eG        40          75        
+44          2018        Honda       Civic si        40          77        
+99          2014        Honda       Civic si        38          80        
+130         2016        Honda       Civic si        24          109       
+22          2007        Honda       Civic           24          111       
+226         2008        Honda       Accord          18          123       
+34          2010        Honda       Fit             18          124       
+89          2014        Honda       Civic si        16          126       
+4           2007        Honda       Civic           14          133       
+102         2015        Honda       Accord          10          139       
+74          2015        Honda       Accord          8           152       
+72          2016        Honda       Civic si        4           162       
+101         2014        Honda       Civic           0           165       
+70          2014        Honda       Civic           0           167       
+30          2012        Hyundai     Celoster        66          30        
+38          2017        Hyundai     Elantra sport   62          40        
+92          2017        Hyundai     Elantra sport   30          95        
+159         2013        Hyundai     Gen coupe       14          128       
+128         2010        Infiniti    G37             128         1         
+122         2011        Infiniti    M37s            44          68        
+20          2009        Infiniti    G37             38          79        
+95          2004        Infiniti    G35             12          136       
+124         2015        Jeep        Wrangler        124         2         
+123         2006        Lexus       Sc430           66          31        
+222         2015        Lexus       Is250           40          74        
+190         1995        Lexus       Sc300           10          146       
+212         2001        Lexus       Is300           6           157       
+52          2007        Mazda       Speed 3         48          59        
+78          2015        Mazda       6               36          86        
+141         1993        Mazda       Miata           26          105       
+79          1993        Mazda       Miata           18          122       
+138         1990        Mazda       Miata           10          144       
+25          2012        Mercedes    C250            78          22        
+84          2012        Mercedes    Cl63amg         70          28        
+17          2016        Mercedes    C43             34          88        
+98          2012        Mercedes    C63             26          102       
+91          2010        Mitsu       Lancer          102         10        
+140         1995        Mitsu       Evo8            44          63        
+176         2014        Mitsu       Lancer          40          76        
+19          2001        Mitsu       Evo7            40          78        
+163         2013        Mitsu       Ralliart        22          113       
+228         2010        Nissan      370             92          12        
+161         2012        Nissan      370z            84          18        
+3           2011        Nissan      370             84          19        
+158         2007        Nissan      350z            64          35        
+12          1990        Nissan      240             62          39        
+8           1991        Nissan      Skyline         44          62        
+Showcar     2014        Nissan      Gtr             44          64        
+9           1996        Nissan      240             44          67        
+162         2014        Nissan      370z            36          85        
+10          2001        Nissan      S15             34          87        
+4341        1992        Nissan      Rps13           32          89        
+7           2014        Nissan      Sentra          30          92        
+11          1991        Nissan      Skyline         30          96        
+14          1990        Nissan      Skyline         26          101       
+242         2014        Nissan      Maxima          26          107       
+150         2006        Nissan      350z            22          115       
+193         2014        Nissan      Ssntra          14          134       
+68          2013        Nissan      Altima          10          138       
+16          2008        Nissan      350z            10          142       
+57          2015        Scion       Frs             80          21        
+235         2013        Scion       Frs             20          121       
+36          2016        Subaru      WRX             74          24        
+33          2015        Subaru      Sti             68          29        
+21          2009        Subaru      WRX             62          37        
+23          1998        Subaru      Legacy          62          38        
+53          2013        Subaru      WRX             60          42        
+37          2015        Subaru      Sti             54          48        
+134         2013        Subaru      WRX             52          51        
+51          2015        Subaru      WRX             50          53        
+232         2018        Subaru      WRX             46          61        
+153         2017        Subaru      Brz             42          70        
+200         2016        Subaru      WRX             36          84        
+24          2013        Subaru      BRZ             32          91        
+187         2007        Subaru      Legacy          26          106       
+67          2015        Subaru      Sti             14          129       
+76          2005        Subaru      Sti             12          137       
+69          2018        Subaru      WRX             8           153       
+1           2012        Subaru      WRX             6           155       
+75          2012        Subaru      WRX             6           156       
+40          2007        Subaru      Legacy          6           158       
+64          2004        Subaru      Forester        6           160       
+142         1993        Toyota      Supra           58          43        
+110         2011        Toyota      Camry           58          44        
+43          2011        Toyota      4 Runner        54          47        
+189         2012        Toyota      Fj cruiser      50          56        
+241         2007        Toyota      Camry           24          110       
+243         2008        Toyota      Matrix          10          141       
+126         2010        Volkswagen  Eos             92          14        
+180         2011        Volkswagen  Gti             82          20        
+156         2014        Volkswagen  Gli             56          45        
+6           2016        Volkswagen  Golf r          54          50        
+56          2009        Volkswagen  Jetta           42          71        
+145         1990        Volkswagen  Gti             38          81        
+179         2004        Volkswagen  R32             38          82        
+46          2008        Volkswagen  R32             32          90        
+181         2003        Volkswagen  Gti             30          93        
+59          2012        Volkswagen  Golf            28          97        
+238         1982        Volkswagen  Rabbit          28          99        
+144         2016        Volkswagen  Gti             28          100       
+114         2010        Volkswagen  Gti             26          103       
+81          2016        Volkswagen  GTI             24          112       
+182         2012        Volkswagen  Cc              20          120       
+183         2005        Volkswagen  Jetta           16          125       
+Vip         2008        Volkswagen  Gli             16          127       
+186         2012        Volkswagen  Gli             14          132       
+177         2005        Volkswagen  Jetta gli       12          135       
+96          2017        Volkswagen  Gti             10          143       
+94          2004        Volkswagen  Gti             10          145       
+237         1987        Volkswagen  Jetta           10          147       
+184         2010        Volkswagen  Cc              8           148       
+185         2013        Volkswagen  Jett            8           151       
+86          1996        Volkswagen  Jetta           8           154       
+66          2010        Volkswagen  Gti             4           161       
+100         2006        Volvo       S60r            22          116       
+sqlite> SELECT * FROM orderedScores ORDER by Make;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMake, COUNT(*) FROM orderedScores GROUP BY Model;
+Make        COUNT(*)  
+----------  ----------
+Nissan      2         
+Chrystler   1         
+Bmw         1         
+Bmw         1         
+Nissan      3         
+Nissan      2         
+Nissan      2         
+Bmw         1         
+Toyota      1         
+Mazda       1         
+Audi        3         
+Honda       6         
+Nissan      1         
+Subaru      1         
+Subaru      1         
+Mercedes    1         
+Mercedes    1         
+Mercedes    1         
+Chevy       2         
+Toyota      2         
+Volkswagen  2         
+Hyundai     1         
+Honda       9         
+Honda       1         
+Honda       1         
+Honda       6         
+Mercedes    1         
+Chevy       1         
+Honda       1         
+Hyundai     2         
+Volkswagen  1         
+Mitsu       1         
+Mitsu       1         
+Honda       3         
+Toyota      1         
+Ford        2         
+Ford        1         
+Subaru      1         
+Scion       2         
+Infiniti    1         
+Infiniti    2         
+Volkswagen  1         
+Hyundai     1         
+Volkswagen  3         
+Volkswagen  1         
+Volkswagen  1         
+Volkswagen  8         
+Nissan      1         
+Acura       1         
+Lexus       1         
+Lexus       1         
+Volkswagen  1         
+Volkswagen  4         
+Volkswagen  1         
+Mitsu       2         
+Subaru      3         
+Bmw         1         
+Infiniti    1         
+Toyota      1         
+Nissan      1         
+Mazda       3         
+Ford        1         
+Honda       1         
+Volkswagen  2         
+Volkswagen  1         
+Mitsu       1         
+Nissan      1         
+Acura       2         
+Nissan      1         
+Audi        1         
+Audi        2         
+Volvo       1         
+Lexus       1         
+Lexus       1         
+Nissan      1         
+Nissan      3         
+Mazda       1         
+Nissan      1         
+Subaru      4         
+Toyota      1         
+Acura       5         
+Acura       3         
+Acura       1         
+Acura       6         
+Acura       1         
+Dodge       1         
+Subaru      10        
+Jeep        1         
+sqlite> SELECT Make, COUNT(*) FROM orderedScores GROUP BY Model;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P* FROM orderedScores ORDER by Make;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMake, COUNT(*) FROM orderedScores GROUP BY Model;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@odel[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[7P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[8P* FROM orderedScores ORDER by Make;[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K;
 Car_ID      Year        Make        Model       Scores      Rank      
 ----------  ----------  ----------  ----------  ----------  ----------
 128         2010        Infiniti    G37         128         1         
@@ -641,252 +1401,806 @@ Vip         2008        Volkswagen  Gli         16          127
 101         2014        Honda       Civic       0           165       
 0           2015        Chevy       Camaro      0           166       
 70          2014        Honda       Civic       0           167       
-sqlite> --finished with first part of second lap[K[K[K[K[K[K[K[K[K[K[K[K[Kof question 2
+sqlite> SELECT * FROM orderedScores;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMake, COUNT(*) FROM orderedScores GROUP BY Model;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P* FROM orderedScores ORDER by Make;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMake, COUNT(*) FROM orderedScores GROUP BY Model;[1@O[1@R[1@D[1@E[1@R[1@E[1@D[1@ [1@B[1P[1P[1P[1P[1@B[1@Y[1@ [1P[1P[1P[1@ [1@B[1@Y[1@ [1@M[1@a[1@k[1@e[1@ 
+Error: near "GROUP": syntax error
+sqlite> SELECT Make, COUNT(*) FROM orderedScores ORDER BY Make GROUP BY Model;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[42P* FROM orderedScores;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMake, COUNT(*) FROM orderedScores GROUP BY Model; ;o;r;d;e;r; ;b;y; ;M;a;k;e;
+Make        COUNT(*)  
+----------  ----------
+Acura       1         
+Acura       2         
+Acura       5         
+Acura       3         
+Acura       1         
+Acura       6         
+Acura       1         
+Audi        3         
+Audi        1         
+Audi        2         
+Bmw         1         
+Bmw         1         
+Bmw         1         
+Bmw         1         
+Chevy       2         
+Chevy       1         
+Chrystler   1         
+Dodge       1         
+Ford        2         
+Ford        1         
+Ford        1         
+Honda       6         
+Honda       9         
+Honda       1         
+Honda       1         
+Honda       6         
+Honda       1         
+Honda       3         
+Honda       1         
+Hyundai     1         
+Hyundai     2         
+Hyundai     1         
+Infiniti    1         
+Infiniti    2         
+Infiniti    1         
+Jeep        1         
+Lexus       1         
+Lexus       1         
+Lexus       1         
+Lexus       1         
+Mazda       1         
+Mazda       3         
+Mazda       1         
+Mercedes    1         
+Mercedes    1         
+Mercedes    1         
+Mercedes    1         
+Mitsu       1         
+Mitsu       1         
+Mitsu       2         
+Mitsu       1         
+Nissan      2         
+Nissan      3         
+Nissan      2         
+Nissan      2         
+Nissan      1         
+Nissan      1         
+Nissan      1         
+Nissan      1         
+Nissan      1         
+Nissan      1         
+Nissan      3         
+Nissan      1         
+Scion       2         
+Subaru      1         
+Subaru      1         
+Subaru      1         
+Subaru      3         
+Subaru      4         
+Subaru      10        
+Toyota      1         
+Toyota      2         
+Toyota      1         
+Toyota      1         
+Toyota      1         
+Volkswagen  2         
+Volkswagen  1         
+Volkswagen  1         
+Volkswagen  3         
+Volkswagen  1         
+Volkswagen  1         
+Volkswagen  8         
+Volkswagen  1         
+Volkswagen  4         
+Volkswagen  1         
+Volkswagen  2         
+Volkswagen  1         
+Volvo       1         
+sqlite> SELECT Make, COUNT(*) FROM orderedScores GROUP BY Model order by Make;ORDER BY Make GROUP BY Model;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[42P* FROM orderedScores;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMake, COUNT(*) FROM orderedScores GROUP BY Model;[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[14P* FROM orderedScores ORDER by Make;
+Car_ID      Year        Make        Model           Scores      Rank      
+----------  ----------  ----------  --------------  ----------  ----------
+113         2012        Acura       Tsx sportwagon  116         4         
+112         2008        Acura       TL              110         6         
+50          2015        Acura       TLX             102         8         
+127         2013        Acura       Tsx             86          16        
+106         2007        Acura       Tl type s       78          23        
+103         2010        Acura       Tsx             72          27        
+1051        2006        Acura       Tsx             66          32        
+41          2012        Acura       Tsx             64          34        
+48          2015        Acura       TLX             62          36        
+225         2016        Acura       TLX             52          52        
+5           2003        Acura       Rsx             50          54        
+211         2004        Acura       Tsx             48          60        
+121         2012        Acura       TL              44          65        
+49          1997        Acura       Integra         42          72        
+45          2006        Acura       TL              42          73        
+93          2005        Acura       TL              22          114       
+230         2004        Acura       Tsx             20          119       
+71          2008        Acura       TL              6           159       
+174         2006        Acura       Rsx             4           163       
+15          2014        Audi        S4              120         3         
+18          2015        Audi        S3              38          83        
+116         2008        Audi        A4              28          98        
+108         2013        Audi        S4              14          130       
+220         2004        Audi        A4              14          131       
+197         2010        Audi        A4              2           164       
+2           2016        Bmw         M2              24          108       
+172         2014        Bmw         4               22          117       
+111         2007        Bmw         328i            10          140       
+28          1995        Bmw         318xi           8           150       
+218         2010        Chevy       Camaro          64          33        
+170         2014        Chevy       Cruze           50          55        
+0           2015        Chevy       Camaro          0           166       
+216         2007        Chrystler   300             96          11        
+42          2001        Dodge       Viper           8           149       
+137         2017        Ford        Focus rs        54          49        
+120         2014        Ford        Focus st        30          94        
+219         2016        Ford        Focus rs        26          104       
+167         2016        Ford        Mystang         20          118       
+83          2014        Honda       Accord          112         5         
+65          2009        Honda       Fit             106         7         
+31          2007        Honda       Fit             102         9         
+175         2006        Honda       Civic           92          13        
+13          2016        Honda       Civic 1.5t      92          15        
+63          2010        Honda       Civic           86          17        
+178         2009        Honda       Oddesy          72          25        
+39          2011        Honda       Civic           72          26        
+35          2016        Honda       Civic           60          41        
+115         2001        Honda       Crv             56          46        
+88          2008        Honda       Accord          48          57        
+104         2014        Honda       Civic si        48          58        
+118         1993        Honda       Civic           44          66        
+85          2017        Honda       Accord          42          69        
+207         1993        Honda       Civic eG        40          75        
+44          2018        Honda       Civic si        40          77        
+99          2014        Honda       Civic si        38          80        
+130         2016        Honda       Civic si        24          109       
+22          2007        Honda       Civic           24          111       
+226         2008        Honda       Accord          18          123       
+34          2010        Honda       Fit             18          124       
+89          2014        Honda       Civic si        16          126       
+4           2007        Honda       Civic           14          133       
+102         2015        Honda       Accord          10          139       
+74          2015        Honda       Accord          8           152       
+72          2016        Honda       Civic si        4           162       
+101         2014        Honda       Civic           0           165       
+70          2014        Honda       Civic           0           167       
+30          2012        Hyundai     Celoster        66          30        
+38          2017        Hyundai     Elantra sport   62          40        
+92          2017        Hyundai     Elantra sport   30          95        
+159         2013        Hyundai     Gen coupe       14          128       
+128         2010        Infiniti    G37             128         1         
+122         2011        Infiniti    M37s            44          68        
+20          2009        Infiniti    G37             38          79        
+95          2004        Infiniti    G35             12          136       
+124         2015        Jeep        Wrangler        124         2         
+123         2006        Lexus       Sc430           66          31        
+222         2015        Lexus       Is250           40          74        
+190         1995        Lexus       Sc300           10          146       
+212         2001        Lexus       Is300           6           157       
+52          2007        Mazda       Speed 3         48          59        
+78          2015        Mazda       6               36          86        
+141         1993        Mazda       Miata           26          105       
+79          1993        Mazda       Miata           18          122       
+138         1990        Mazda       Miata           10          144       
+25          2012        Mercedes    C250            78          22        
+84          2012        Mercedes    Cl63amg         70          28        
+17          2016        Mercedes    C43             34          88        
+98          2012        Mercedes    C63             26          102       
+91          2010        Mitsu       Lancer          102         10        
+140         1995        Mitsu       Evo8            44          63        
+176         2014        Mitsu       Lancer          40          76        
+19          2001        Mitsu       Evo7            40          78        
+163         2013        Mitsu       Ralliart        22          113       
+228         2010        Nissan      370             92          12        
+161         2012        Nissan      370z            84          18        
+3           2011        Nissan      370             84          19        
+158         2007        Nissan      350z            64          35        
+12          1990        Nissan      240             62          39        
+8           1991        Nissan      Skyline         44          62        
+Showcar     2014        Nissan      Gtr             44          64        
+9           1996        Nissan      240             44          67        
+162         2014        Nissan      370z            36          85        
+10          2001        Nissan      S15             34          87        
+4341        1992        Nissan      Rps13           32          89        
+7           2014        Nissan      Sentra          30          92        
+11          1991        Nissan      Skyline         30          96        
+14          1990        Nissan      Skyline         26          101       
+242         2014        Nissan      Maxima          26          107       
+150         2006        Nissan      350z            22          115       
+193         2014        Nissan      Ssntra          14          134       
+68          2013        Nissan      Altima          10          138       
+16          2008        Nissan      350z            10          142       
+57          2015        Scion       Frs             80          21        
+235         2013        Scion       Frs             20          121       
+36          2016        Subaru      WRX             74          24        
+33          2015        Subaru      Sti             68          29        
+21          2009        Subaru      WRX             62          37        
+23          1998        Subaru      Legacy          62          38        
+53          2013        Subaru      WRX             60          42        
+37          2015        Subaru      Sti             54          48        
+134         2013        Subaru      WRX             52          51        
+51          2015        Subaru      WRX             50          53        
+232         2018        Subaru      WRX             46          61        
+153         2017        Subaru      Brz             42          70        
+200         2016        Subaru      WRX             36          84        
+24          2013        Subaru      BRZ             32          91        
+187         2007        Subaru      Legacy          26          106       
+67          2015        Subaru      Sti             14          129       
+76          2005        Subaru      Sti             12          137       
+69          2018        Subaru      WRX             8           153       
+1           2012        Subaru      WRX             6           155       
+75          2012        Subaru      WRX             6           156       
+40          2007        Subaru      Legacy          6           158       
+64          2004        Subaru      Forester        6           160       
+142         1993        Toyota      Supra           58          43        
+110         2011        Toyota      Camry           58          44        
+43          2011        Toyota      4 Runner        54          47        
+189         2012        Toyota      Fj cruiser      50          56        
+241         2007        Toyota      Camry           24          110       
+243         2008        Toyota      Matrix          10          141       
+126         2010        Volkswagen  Eos             92          14        
+180         2011        Volkswagen  Gti             82          20        
+156         2014        Volkswagen  Gli             56          45        
+6           2016        Volkswagen  Golf r          54          50        
+56          2009        Volkswagen  Jetta           42          71        
+145         1990        Volkswagen  Gti             38          81        
+179         2004        Volkswagen  R32             38          82        
+46          2008        Volkswagen  R32             32          90        
+181         2003        Volkswagen  Gti             30          93        
+59          2012        Volkswagen  Golf            28          97        
+238         1982        Volkswagen  Rabbit          28          99        
+144         2016        Volkswagen  Gti             28          100       
+114         2010        Volkswagen  Gti             26          103       
+81          2016        Volkswagen  GTI             24          112       
+182         2012        Volkswagen  Cc              20          120       
+183         2005        Volkswagen  Jetta           16          125       
+Vip         2008        Volkswagen  Gli             16          127       
+186         2012        Volkswagen  Gli             14          132       
+177         2005        Volkswagen  Jetta gli       12          135       
+96          2017        Volkswagen  Gti             10          143       
+94          2004        Volkswagen  Gti             10          145       
+237         1987        Volkswagen  Jetta           10          147       
+184         2010        Volkswagen  Cc              8           148       
+185         2013        Volkswagen  Jett            8           151       
+86          1996        Volkswagen  Jetta           8           154       
+66          2010        Volkswagen  Gti             4           161       
+100         2006        Volvo       S60r            22          116       
+sqlite> SELECT * FROM orderedScores ORDER by Make;[1@r[1@o[1@w[1@i[1@d[1@,
+rowid       Car_ID      Year        Make        Model           Scores      Rank      
+----------  ----------  ----------  ----------  --------------  ----------  ----------
+4           113         2012        Acura       Tsx sportwagon  116         4         
+6           112         2008        Acura       TL              110         6         
+8           50          2015        Acura       TLX             102         8         
+16          127         2013        Acura       Tsx             86          16        
+23          106         2007        Acura       Tl type s       78          23        
+27          103         2010        Acura       Tsx             72          27        
+32          1051        2006        Acura       Tsx             66          32        
+34          41          2012        Acura       Tsx             64          34        
+36          48          2015        Acura       TLX             62          36        
+52          225         2016        Acura       TLX             52          52        
+54          5           2003        Acura       Rsx             50          54        
+60          211         2004        Acura       Tsx             48          60        
+65          121         2012        Acura       TL              44          65        
+72          49          1997        Acura       Integra         42          72        
+73          45          2006        Acura       TL              42          73        
+114         93          2005        Acura       TL              22          114       
+119         230         2004        Acura       Tsx             20          119       
+159         71          2008        Acura       TL              6           159       
+163         174         2006        Acura       Rsx             4           163       
+3           15          2014        Audi        S4              120         3         
+83          18          2015        Audi        S3              38          83        
+98          116         2008        Audi        A4              28          98        
+130         108         2013        Audi        S4              14          130       
+131         220         2004        Audi        A4              14          131       
+164         197         2010        Audi        A4              2           164       
+108         2           2016        Bmw         M2              24          108       
+117         172         2014        Bmw         4               22          117       
+140         111         2007        Bmw         328i            10          140       
+150         28          1995        Bmw         318xi           8           150       
+33          218         2010        Chevy       Camaro          64          33        
+55          170         2014        Chevy       Cruze           50          55        
+166         0           2015        Chevy       Camaro          0           166       
+11          216         2007        Chrystler   300             96          11        
+149         42          2001        Dodge       Viper           8           149       
+49          137         2017        Ford        Focus rs        54          49        
+94          120         2014        Ford        Focus st        30          94        
+104         219         2016        Ford        Focus rs        26          104       
+118         167         2016        Ford        Mystang         20          118       
+5           83          2014        Honda       Accord          112         5         
+7           65          2009        Honda       Fit             106         7         
+9           31          2007        Honda       Fit             102         9         
+13          175         2006        Honda       Civic           92          13        
+15          13          2016        Honda       Civic 1.5t      92          15        
+17          63          2010        Honda       Civic           86          17        
+25          178         2009        Honda       Oddesy          72          25        
+26          39          2011        Honda       Civic           72          26        
+41          35          2016        Honda       Civic           60          41        
+46          115         2001        Honda       Crv             56          46        
+57          88          2008        Honda       Accord          48          57        
+58          104         2014        Honda       Civic si        48          58        
+66          118         1993        Honda       Civic           44          66        
+69          85          2017        Honda       Accord          42          69        
+75          207         1993        Honda       Civic eG        40          75        
+77          44          2018        Honda       Civic si        40          77        
+80          99          2014        Honda       Civic si        38          80        
+109         130         2016        Honda       Civic si        24          109       
+111         22          2007        Honda       Civic           24          111       
+123         226         2008        Honda       Accord          18          123       
+124         34          2010        Honda       Fit             18          124       
+126         89          2014        Honda       Civic si        16          126       
+133         4           2007        Honda       Civic           14          133       
+139         102         2015        Honda       Accord          10          139       
+152         74          2015        Honda       Accord          8           152       
+162         72          2016        Honda       Civic si        4           162       
+165         101         2014        Honda       Civic           0           165       
+167         70          2014        Honda       Civic           0           167       
+30          30          2012        Hyundai     Celoster        66          30        
+40          38          2017        Hyundai     Elantra sport   62          40        
+95          92          2017        Hyundai     Elantra sport   30          95        
+128         159         2013        Hyundai     Gen coupe       14          128       
+1           128         2010        Infiniti    G37             128         1         
+68          122         2011        Infiniti    M37s            44          68        
+79          20          2009        Infiniti    G37             38          79        
+136         95          2004        Infiniti    G35             12          136       
+2           124         2015        Jeep        Wrangler        124         2         
+31          123         2006        Lexus       Sc430           66          31        
+74          222         2015        Lexus       Is250           40          74        
+146         190         1995        Lexus       Sc300           10          146       
+157         212         2001        Lexus       Is300           6           157       
+59          52          2007        Mazda       Speed 3         48          59        
+86          78          2015        Mazda       6               36          86        
+105         141         1993        Mazda       Miata           26          105       
+122         79          1993        Mazda       Miata           18          122       
+144         138         1990        Mazda       Miata           10          144       
+22          25          2012        Mercedes    C250            78          22        
+28          84          2012        Mercedes    Cl63amg         70          28        
+88          17          2016        Mercedes    C43             34          88        
+102         98          2012        Mercedes    C63             26          102       
+10          91          2010        Mitsu       Lancer          102         10        
+63          140         1995        Mitsu       Evo8            44          63        
+76          176         2014        Mitsu       Lancer          40          76        
+78          19          2001        Mitsu       Evo7            40          78        
+113         163         2013        Mitsu       Ralliart        22          113       
+12          228         2010        Nissan      370             92          12        
+18          161         2012        Nissan      370z            84          18        
+19          3           2011        Nissan      370             84          19        
+35          158         2007        Nissan      350z            64          35        
+39          12          1990        Nissan      240             62          39        
+62          8           1991        Nissan      Skyline         44          62        
+64          Showcar     2014        Nissan      Gtr             44          64        
+67          9           1996        Nissan      240             44          67        
+85          162         2014        Nissan      370z            36          85        
+87          10          2001        Nissan      S15             34          87        
+89          4341        1992        Nissan      Rps13           32          89        
+92          7           2014        Nissan      Sentra          30          92        
+96          11          1991        Nissan      Skyline         30          96        
+101         14          1990        Nissan      Skyline         26          101       
+107         242         2014        Nissan      Maxima          26          107       
+115         150         2006        Nissan      350z            22          115       
+134         193         2014        Nissan      Ssntra          14          134       
+138         68          2013        Nissan      Altima          10          138       
+142         16          2008        Nissan      350z            10          142       
+21          57          2015        Scion       Frs             80          21        
+121         235         2013        Scion       Frs             20          121       
+24          36          2016        Subaru      WRX             74          24        
+29          33          2015        Subaru      Sti             68          29        
+37          21          2009        Subaru      WRX             62          37        
+38          23          1998        Subaru      Legacy          62          38        
+42          53          2013        Subaru      WRX             60          42        
+48          37          2015        Subaru      Sti             54          48        
+51          134         2013        Subaru      WRX             52          51        
+53          51          2015        Subaru      WRX             50          53        
+61          232         2018        Subaru      WRX             46          61        
+70          153         2017        Subaru      Brz             42          70        
+84          200         2016        Subaru      WRX             36          84        
+91          24          2013        Subaru      BRZ             32          91        
+106         187         2007        Subaru      Legacy          26          106       
+129         67          2015        Subaru      Sti             14          129       
+137         76          2005        Subaru      Sti             12          137       
+153         69          2018        Subaru      WRX             8           153       
+155         1           2012        Subaru      WRX             6           155       
+156         75          2012        Subaru      WRX             6           156       
+158         40          2007        Subaru      Legacy          6           158       
+160         64          2004        Subaru      Forester        6           160       
+43          142         1993        Toyota      Supra           58          43        
+44          110         2011        Toyota      Camry           58          44        
+47          43          2011        Toyota      4 Runner        54          47        
+56          189         2012        Toyota      Fj cruiser      50          56        
+110         241         2007        Toyota      Camry           24          110       
+141         243         2008        Toyota      Matrix          10          141       
+14          126         2010        Volkswagen  Eos             92          14        
+20          180         2011        Volkswagen  Gti             82          20        
+45          156         2014        Volkswagen  Gli             56          45        
+50          6           2016        Volkswagen  Golf r          54          50        
+71          56          2009        Volkswagen  Jetta           42          71        
+81          145         1990        Volkswagen  Gti             38          81        
+82          179         2004        Volkswagen  R32             38          82        
+90          46          2008        Volkswagen  R32             32          90        
+93          181         2003        Volkswagen  Gti             30          93        
+97          59          2012        Volkswagen  Golf            28          97        
+99          238         1982        Volkswagen  Rabbit          28          99        
+100         144         2016        Volkswagen  Gti             28          100       
+103         114         2010        Volkswagen  Gti             26          103       
+112         81          2016        Volkswagen  GTI             24          112       
+120         182         2012        Volkswagen  Cc              20          120       
+125         183         2005        Volkswagen  Jetta           16          125       
+127         Vip         2008        Volkswagen  Gli             16          127       
+132         186         2012        Volkswagen  Gli             14          132       
+135         177         2005        Volkswagen  Jetta gli       12          135       
+143         96          2017        Volkswagen  Gti             10          143       
+145         94          2004        Volkswagen  Gti             10          145       
+147         237         1987        Volkswagen  Jetta           10          147       
+148         184         2010        Volkswagen  Cc              8           148       
+151         185         2013        Volkswagen  Jett            8           151       
+154         86          1996        Volkswagen  Jetta           8           154       
+161         66          2010        Volkswagen  Gti             4           161       
+116         100         2006        Volvo       S60r            22          116       
+sqlite> SELEC[K[K[K[K[KCREATE TABLE [K[K[K[K[K[K[K[K[K[K[K[K[KSELECT Car_ID, Make, Total, MIN(Rank) AS Rank1 FROM Rank_Table GROUP BY Make;[1P[1P[1P[1P[1P[1P[1P[1P[1P[C[1P[1@o[1@r[1@d[1@e[1@r[1@e[1@d[1@R[1@a[1@b[1@k[1P[1P[1@n[1@k[1@s[C[1P[1P[1P[1P[1P[1P[1P[1P[C[1P[1@M[1@I[1@N[1@([1@s[1P[1@S[1@c[1@o[1@r[1@e[1@s[1@)
+Error: no such table: orderedRanks
+sqlite> SELECT Car_ID, Make, Total, MIN(Scores) AS Rank1 FROM orderedRanks GROUP BY Make;[1P[1P[1P[1P[C[1P[1@S[1@c[1@o[1@r[1@e[1@s
+Error: no such column: Total
+sqlite> SELECT Car_ID, Make, Total, MIN(Scores) AS Rank1 FROM orderedScores GROUP BY Make;[1P[1P[1P[1P[1P[1@S[1@c[1@o[1@r[1@e[1@s[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1P[1@r[1P[1@R[1@a[1@n[1@k
+Car_ID      Make        Scores      Rank1     
+----------  ----------  ----------  ----------
+113         Acura       116         4         
+15          Audi        120         3         
+2           Bmw         24          108       
+218         Chevy       64          33        
+216         Chrystler   96          11        
+42          Dodge       8           149       
+137         Ford        54          49        
+83          Honda       112         5         
+30          Hyundai     66          30        
+128         Infiniti    128         1         
+124         Jeep        124         2         
+123         Lexus       66          31        
+52          Mazda       48          59        
+25          Mercedes    78          22        
+91          Mitsu       102         10        
+228         Nissan      92          12        
+57          Scion       80          21        
+36          Subaru      74          24        
+142         Toyota      58          43        
+126         Volkswagen  92          14        
+100         Volvo       22          116       
+sqlite> SELECT Car_ID, Make, Scores, MIN(Rank) AS Rank1 FROM orderedScores GROUP BY Make;[C[C[C[C
+Car_ID      Make        Scores      Rank1     
+----------  ----------  ----------  ----------
+113         Acura       116         4         
+15          Audi        120         3         
+2           Bmw         24          108       
+218         Chevy       64          33        
+216         Chrystler   96          11        
+42          Dodge       8           149       
+137         Ford        54          49        
+83          Honda       112         5         
+30          Hyundai     66          30        
+128         Infiniti    128         1         
+124         Jeep        124         2         
+123         Lexus       66          31        
+52          Mazda       48          59        
+25          Mercedes    78          22        
+91          Mitsu       102         10        
+228         Nissan      92          12        
+57          Scion       80          21        
+36          Subaru      74          24        
+142         Toyota      58          43        
+126         Volkswagen  92          14        
+100         Volvo       22          116       
+sqlite> SELECT Car_ID, Make, Scores, MIN(Rank) AS Rank1 FROM orderedScores GROUP BY Make;[1P[1P[1P[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1P[1P[1P[1P[1P[1@t[1@o[1@p[1@p[1P[1@T[1@h[1@r[1@e[1@e[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Car_ID      Make        Scores      topThree  
+----------  ----------  ----------  ----------
+174         Acura       4           163       
+197         Audi        2           164       
+28          Bmw         8           150       
+0           Chevy       0           166       
+216         Chrystler   96          11        
+42          Dodge       8           149       
+167         Ford        20          118       
+70          Honda       0           167       
+159         Hyundai     14          128       
+95          Infiniti    12          136       
+124         Jeep        124         2         
+212         Lexus       6           157       
+138         Mazda       10          144       
+98          Mercedes    26          102       
+163         Mitsu       22          113       
+16          Nissan      10          142       
+235         Scion       20          121       
+64          Subaru      6           160       
+243         Toyota      10          141       
+66          Volkswagen  4           161       
+100         Volvo       22          116       
+sqlite> SELECT Car_ID, Make, Scores, (Rank) AS topThree FROM orderedScores GROUP BY Make; ;L;I;M;I;T; ;3;
+Car_ID      Make        Scores      topThree  
+----------  ----------  ----------  ----------
+174         Acura       4           163       
+197         Audi        2           164       
+28          Bmw         8           150       
+sqlite> SELECT Car_ID, Make, Scores, (Rank) AS topThree FROM orderedScores GROUP BY Make LIMIT 3;[C;[K[C[1@ [1@l[1@i[1@m[1@i[1@t[C[1@ [1@3
+Error: near "FROM": syntax error
+sqlite> SELECT Car_ID, Make, Scores, (Rank) AS topThree limit 3 FROM orderedScores GROUP BY Make;FROM orderedScores GROUP BY Make LIMIT 3;[C[C[C[C[C[C[C[C[C[C[C;[K[C[1@ [1@L[1@I[1@M[1@I[1@T[C[1@ [1@3
+Error: near "GROUP": syntax error
+sqlite> SELECT TOP 100 * FROM MyTable
+   ...> ;
+Error: near "100": syntax error
+sqlite> SELECT TOP 100 * FROM MyTable
+   ...> ORDER BY MyCol DESC
+   ...> ;
+Error: near "100": syntax error
+sqlite> SELECT TOPP [K[K 100 *[K[K[K[K0 * FROM M[KMyT[K[K[KorderedScores ORDER BY Make [K;
+Error: near "10": syntax error
+sqlite> SELECT TOP 10 * FROM orderedScores ORDER BY Make;[C[C[C[C[C[C[C[C;[KORDER BY MyCol DESC[C[C[C[C[C[C[C[C;[KSELECT TOP 10 * FROM orderedScores ORDER BY Make;[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[KCREATE [K[K[K[K[K[K[K;ORDER BY MyCol DESC[C[C[C[C[C[C[C[CSELECT TOP 100 * FROM MyTable[C[C[C[C[C[C[C[C;[KSELECT TOP 100 * FROM MyTable[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CCar_ID, Make, Scores, (Rank) AS topThree FROM orderedScores LIMIT 3 GROUP BY Make;limit 3 FROM orderedScores[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CFROM orderedScores GROUP BY Make LIMIT 3;;[K[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[CMIN(Rank) AS Rank1[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@Total, MIN(Scores[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1PScores, MIN(Rank[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C
+Car_ID      Make        Scores      Rank1     
+----------  ----------  ----------  ----------
+113         Acura       116         4         
+15          Audi        120         3         
+2           Bmw         24          108       
+218         Chevy       64          33        
+216         Chrystler   96          11        
+42          Dodge       8           149       
+137         Ford        54          49        
+83          Honda       112         5         
+30          Hyundai     66          30        
+128         Infiniti    128         1         
+124         Jeep        124         2         
+123         Lexus       66          31        
+52          Mazda       48          59        
+25          Mercedes    78          22        
+91          Mitsu       102         10        
+228         Nissan      92          12        
+57          Scion       80          21        
+36          Subaru      74          24        
+142         Toyota      58          43        
+126         Volkswagen  92          14        
+100         Volvo       22          116       
+sqlite> SELECT Car_ID, Make, Scores, MIN(Rank) AS Rank1 FROM orderedScores GROUP BY Make; ;W;H;E;R;E; ;[1P;[1P;[1P;[1P;[1P;[1P;[1P; ;H;A;V;I;N;G; ;[1P;[1P;[1P;[1P;[1P;[1P;[1P;
+Car_ID      Make        Scores      Rank1     
+----------  ----------  ----------  ----------
+113         Acura       116         4         
+15          Audi        120         3         
+2           Bmw         24          108       
+218         Chevy       64          33        
+216         Chrystler   96          11        
+42          Dodge       8           149       
+137         Ford        54          49        
+83          Honda       112         5         
+30          Hyundai     66          30        
+128         Infiniti    128         1         
+124         Jeep        124         2         
+123         Lexus       66          31        
+52          Mazda       48          59        
+25          Mercedes    78          22        
+91          Mitsu       102         10        
+228         Nissan      92          12        
+57          Scion       80          21        
+36          Subaru      74          24        
+142         Toyota      58          43        
+126         Volkswagen  92          14        
+100         Volvo       22          116       
+sqlite> SELECT Car_ID, Make, Scores, MIN(Rank) AS Rank1 FROM orderedScores GROUP BY Make ;E;X;C;E;P;T; ;S;E;l;[1P;[1P;[1P;S;e;l;e;c;[1P;[1P;[1P;[1P;[1P;s;e;l;e;c;t; ;m;i;n;(;r;a;n;k;[1P;[1P;[1P;[1P;R;a;n;k;); ;a;s; ;[1P;[1P;[1P;[1P;F;R;O;M; ;[1P;[1P;[1P;[1P;[1P; ;F;R;O;M; ;o;r;d;e;r;e;d;S;c;o;r; [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Ce;;s; ;G;O;R;U;P; ;[1P;[1P;[1P;[1P;[1P;R;O;U;P; ;B;Y; ;M;a;k;e; ;[1P;
+Error: SELECTs to the left and right of EXCEPT do not have the same number of result columns
+sqlite> SELECT *
+   ...>     FROM (
+   ...>         SELECT *, Rank() 
+   ...>           over (Partition BY Car_Make
+   ...>                 ORDER BY Ranking DESC ) AS Rank
+   ...>         FROM Rank
+   ...>         ) rs WHERE Rank <= 3;;[K
+Error: near "(": syntax error
+sqlite> SELECT * 
+   ...>  FROM (
+   ...>   SELECT * [K, RANK()[K[K[K[K[Kank()
+   ...>    over (Partition BY Car_Make
+   ...>           ORDER BY Rank DESC ) AS Rank
+   ...>      [K[K[K[KFRO[K[K[K from RANK[K[K[K[KOrd[K[K[KorderedScores
+   ...>    [K) rs w[KWHERE RANK<=3;
+Error: near "(": syntax error
+sqlite> sele[K[K[K[KSELECT * 
+   ...> FROM(
+   ...> SELECT *, [K RANK[K[K[Kn[Kank()[K[K[K[K;
+Error: near ";": syntax error
+sqlite> .schema orderes[KdScores[K
+sqlite> .schema orderedScores
+CREATE TABLE orderedScores(
+  Car_ID INT,
+  Year INT,
+  Make TEXT,
+  Model TEXT,
+  Scores INT,
+  Rank INT
+);
+sqlite> SELECT *
+   ...> from [K[K[K[K[KFROM(
+   ...> s[KSELECT *, Rank()
+   ...> over (Partition BY Make O[KORDERD[K BY RANK[K[K[Kank DESC) AS Ranking
+   ...> FROM orderedScores
+   ...> ) rs WHERE RANK[K[K[Kanking <=3;
+Error: near "(": syntax error
+sqlite> ) rs WHERE Ranking <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CSELECT *, Rank()[K[C[C[C[C[C[C[C[CFROM([KSELECT *.schema orderedScores[Ks[C[C[C[C[C[C[C[C[13PSELECT *
+   ...> SELECT *) rs WHERE Ranking <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CSELECT *, Rank()[K[C[C[C[C[C[C[C[CFROM([KSELECT *[3PFROM(
+   ...> FROM(SELECT *) rs WHERE Ranking <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking
+   ...> over (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CFROM([KSELECT *[3PFROM(SELECT *) rs WHERE Ranking <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[C[36PFROM orderedScores
+   ...> FROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CFROM([Kover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[C[36PFROM orderedScores[C[C[C[C[C[C[C[C[KFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CFROM([KSELECT *) rs WHERE Ranking <=3;[1P[1P[1P[C[1P <=3;k <=3;
+Error: near "(": syntax error
+sqlite> ) rs WHERE Rank <=3;[C[C[C[C[C[C[C[C[2PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CFROM([KSELECT *
+   ...> SELECT *) rs WHERE Rank <=3;[C[C[C[C[C[C[C[C[2PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CFROM([K[KSELECT *) rs WHERE Ranking <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[C[36PFROM orderedScores[C[C[C[C[C[C[C[C) rs WHERE Ranking <=3;[C[C[C[C[C[C[C[C[15PSELECT *[4PFROM
+   ...> FROMSELECT *) rs WHERE Rank <=3;[C[C[C[C[C[C[C[C[2PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) AS Ranking
+   ...> ;
+Error: near "(": syntax error
+sqlite> SELECT * 
+   ...> FROM ([K[K( 
+   ...> over (Partition BY Make ORDER BY Rank DESC) as special[K[K[K[K[K[K[KSpecial
+   ...> FROM ORDERED [K[K[K[K[K[K[K[Kordered[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[CFROM ordered[KScores
+   ...> ) rs WHERE sp[K[KSpecial <=3;
+Error: near "(": syntax error
+sqlite> ) rs WHERE Special <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[CFROM( [K[3@SELECT *[C
+   ...> SELECT * ) rs WHERE Special <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[CFROM( [K[K[KSELECT * ;[Kover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CFROM[Kover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[C;[Kover (Partition BY Make ORDER BY Rank DESC) AS Ranking[C[C[C[C[C[C[C[CFROM[K
+   ...> FROMSELECT * ) rs WHERE Special <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[1P[1P[34PFROM orderedScores[C[C[C[C[C[C[C[Cover Partition BY Make ORDER BY Rank DESC as Special
+   ...> over Partition BY Make ORDER BY Rank DESC as Special[C[C[C[C[C[C[C[CFROM[KSELECT * ) rs WHERE Special <=3;[C[C[C[C[C[C[C[C[5PFROM orderedScores
+   ...> FROM orderedScores[C[C[C[C[C[C[C[Cover Partition BY Make ORDER BY Rank DESC as Special[C[C[C[C[C[C[C[CFROM[KSELECT * ) rs WHERE Special <=3;[C[C[1P[1P
+Error: near "BY": syntax error
+sqlite> rs WHERE Special <=3;[C[C[C[C[C[C[C[C[3PFROM orderedScores[C[C[C[C[C[C[C[Cover Partition BY Make ORDER BY Rank DESC as Special[C[C[C[C[C[C[C[CFROM[KSELECT * 
+   ...> SELECT * rs WHERE Special <=3;[C[C[C[C[C[C[C[C[3PFROM orderedScores[C[C[C[C[C[C[C[Cover Partition BY Make ORDER BY Rank DESC as Special[C[C[C[C[C[C[C[C[34PFROM orderedScores[C[C[C[C[C[C[C[Cover Partition BY Make ORDER BY Rank DESC as Special[C[C[C[C[C[C[C[CFROM[K
+   ...> (
+   ...> (FROMSELECT * rs WHERE Special <=3;[C[C[C[C[C[C[C[C[3PFROM orderedScores[C[C[C[C[C[C[C[Cover Partition BY Make ORDER BY Rank DESC as Special[1@([C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[1@)[1P[C[1@)[C[C[C[C[C[C[C[C[C[C[C
+   ...> FROM orderedScores
+   ...> )
+   ...> rs WHERE Spc[Kecial ;
+Error: near "(": syntax error
+sqlite> rs WHERE Special ;[C[C[C[C[C[C[C[C)[KFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[C([KFROMSELECT * 
+   ...> SELECT * rs WHERE Special ;[C[C[C[C[C[C[C[C)[KFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[C([KFROM
+   ...> FROMSELECT * rs WHERE Special ;[C[C[C[C[C[C[C[C)[KFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[C([KFROMSELECT * [5PFROM([K
+   ...> (FROMSELECT * rs WHERE Special ;[C[C[C[C[C[C[C[C)[KFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[C[36PFROM orderedScores[C[C[C[C[C[C[C[C)[Krs WHERE Special ;[C[C[C[C[C[C[C[C)[KFROM orderedScores[C[C[C[C[C[C[C[Cover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[C([KFROM([Kover (Partition BY Make ORDER BY Rank DESC) as Special[C[C[C[C[C[C[C[C([K[KSELECT * [K, Rank();
+Error: near ";": syntax error
+sqlite> SLE[K[KELECT [K[K[K[K[K[K[KSELECT * FROM (
+   ...> SELECT * RANK[K[K[K[K, Rank() OVER (
+   ...> PARIT[K[KTITION BY Make 
+   ...> ORDER BY Rank DESC [K
+   ...> ) as[K[KS[KAS Special
+   ...> FROM orderedScores)
+   ...> rs WHERE Spc[Kecial<=3;
+Error: near "(": syntax error
+sqlite> rs WHERE Special<=3;[C[C[C[C[C[C[C[C[1PFROM orderedScores)[C[C[C[C[C[C[C[C[7P) AS Special[C[C[C[C[C[C[C[CORDER BY Rank DESC[C[C[C[C[C[C[C[CPARTITION BY Make [C[C[C[C[C[C[C[CSELECT * , Rank() OVER ([9PFROM[C[C[9@, Rank() OVER[C[C[9PFROM[C[C, Rank();[2P FROM (, Rank();[C[C[C[C[C[C[C[C([KFROM([KSELECT *, Rank();[C[C[C[C[C[C[C[C([KFROMSELECT * rs WHERE Special ;[C[C[C[C[C[C[C[C)[Krs WHERE Special ;[C[C[C[C[C[C[C[C[9PSELECT * [5PFROM([KSELECT *, Rank();[2P FROM ([9@, Rank() OVER[C[C[9PFROM[C[C
+   ...> SELECT * FROM ([C[C[C[C[C[C[C[Crs WHERE Special<=3;[C[C[C[C[C[C[C[C[1PFROM orderedScores)[C[C[C[C[C[C[C[C[7P) AS Special[C[C[C[C[C[C[C[CORDER BY Rank DESC[C[C[C[C[C[C[C[CPARTITION BY Make [C[C[C[C[C[C[C[CSELECT * , Rank() OVER ([9PFROM[C[C[9@, Rank() OVER[C[C;
+Error: near "(": syntax error
+sqlite> SELECT * , Rank() OVER (;[10PFROM (sfdas[K[K[K[K[K bruh
+   ...> SELECT * FROM ( bruh, Rank() OVER (;[10PFROM ([C[C[C[C[C[C[C[Crs WHERE Special<=3;[C[C[C[C[C[C[C[C[1PFROM orderedScores)[C[C[C[C[C[C[C[C[7P) AS Special[C[C[C[C[C[C[C[CORDER BY Rank DESC[C[C[C[C[C[C[C[CPARTITION BY Make [C[C[C[C[C[C[C[CSELECT * , Rank() OVER ([9PFROM[C[C[9@, Rank() OVER[C[C
+   ...> ;
+Error: near "SELECT": syntax error
+sqlite> ;SELECT * , Rank() OVER ([4PFROM ( bruh, Rank() OVER (;[10PFROM ([C[C[C[C[C[C[C[Crs WHERE Special<=3;[C[C[C[C[C[C[C[C[5PSELECT * FROM (
+   ...> SELECT * FROM ([C[C[C[C[C[C[C[C;[KSELECT * , Rank() OVER (
+   ...> SELECT * , Rank() OVER ([9PFROM[C[C[C[C[C[C[C[C[C[C;[KSELECT * , Rank() OVER ([4PFROM ( bruh, Rank() OVER (;[10PFROM ([C[C[C[C[C[C[C[Crs WHERE Special<=3;[C[C[C[C[C[C[C[C[1PFROM orderedScores)[C[C[C[C[C[C[C[C[7P) AS Special[C[C[C[C[C[C[C[CORDER BY Rank DESC[C[C[C[C[C[C[C[CPARTITION BY Make [C[C[C[C[C[C[C[CSELECT * , Rank() OVER ([C[C[C[C[C[C[C[C[6PPARTITION BY Make 
+   ...> PARTITION BY Make [C[C[C[C[C[C[C[CSELECT * , Rank() OVER ([9PFROM[C[C[C[C[C[C[C[C[C[C;[KSELECT * , Rank() OVER ([4PFROM ( bruh, Rank() OVER (;[10PFROM ([C[C[C[C[C[C[C[Crs WHERE Special<=3;[C[C[C[C[C[C[C[C[1PFROM orderedScores)[C[C[C[C[C[C[C[C[7P) AS Special[C[C[C[C[C[C[C[CORDER BY Rank DESC[C[C[C[C[C[C[C[CPARTITION BY Make [C[C[C[C[C[C[C[CORDER BY Rank DESC ) properP[K_rankings
+   ...> FROM orderedRanks )
+   ...> WHERE proper_rankinds[K[K[Kngs <=3;
+Error: near "(": syntax error
 sqlite> ^C
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ //[K[K#finished with the second part [K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kfirst part of question 2
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ exit
+sqlite> 
+]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ exi[K[K[Kexit
 exit
 
-Script done on Tue 08 Mar 2022 08:23:35 PM EST
-Script started on Tue 08 Mar 2022 08:25:56 PM EST
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[?1034h[Adnaan.Syed20@sol26 lab_2]$ script[K[K[K[K[K[Ksqlite3 carContestLab.db 
+Script done on Wed 09 Mar 2022 04:07:24 AM EST
+Script started on Wed 09 Mar 2022 04:08:08 AM EST
+]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[?1034h[Adnaan.Syed20@sol26 lab_2]$ sqlite3[K[K[K[K[K[K[Ksqlite3 carContestLab.db 
 SQLite version 3.7.17 2013-05-20 00:56:22
 Enter ".help" for instructions
 Enter SQL statements terminated with a ";"
-[?1034hsqlite> ls[K[K.tables
+[?1034hsqlite> .talb[K[Kble
 Car_Score      Judges         csvData      
 Cars           carRanks       orderedScores
-sqlite> --forgot to move [K[K[K[K[K[K export the ordereded[K[K Scores to a csv file
-sqlite> .HEA[K[K[Kheaders on 
-sqlite> .mode csv
-sqlite> .oup[Ktput lab2[K[K[K[Kextract1,csv[K[K[K[K.csv
-sqlite> SLEC[K[K[KELECT * FROM ordereed[K[KdScores;
-sqlite> exit
-   ...> ;[K
-Error: incomplete SQL: exit
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ ls
-carContestLab.db  [0m[38;5;27mdata_lab2[0m  extract1.csv  question1Log  question2Part2Log
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ cat extract1.csv 
-Car_ID,Year,Make,Model,Scores,Rank
-128,2010,Infiniti,G37,128,1
-124,2015,Jeep,Wrangler,124,2
-15,2014,Audi,S4,120,3
-113,2012,Acura,"Tsx sportwagon",116,4
-83,2014,Honda,Accord,112,5
-112,2008,Acura,TL,110,6
-65,2009,Honda,Fit,106,7
-50,2015,Acura,TLX,102,8
-31,2007,Honda,Fit,102,9
-91,2010,Mitsu,Lancer,102,10
-216,2007,Chrystler,300,96,11
-228,2010,Nissan,370,92,12
-175,2006,Honda,Civic,92,13
-126,2010,Volkswagen,Eos,92,14
-13,2016,Honda,"Civic 1.5t",92,15
-127,2013,Acura,Tsx,86,16
-63,2010,Honda,Civic,86,17
-161,2012,Nissan,370z,84,18
-3,2011,Nissan,370,84,19
-180,2011,Volkswagen,Gti,82,20
-57,2015,Scion,Frs,80,21
-25,2012,Mercedes,C250,78,22
-106,2007,Acura,"Tl type s",78,23
-36,2016,Subaru,WRX,74,24
-178,2009,Honda,Oddesy,72,25
-39,2011,Honda,Civic,72,26
-103,2010,Acura,Tsx,72,27
-84,2012,Mercedes,Cl63amg,70,28
-33,2015,Subaru,Sti,68,29
-30,2012,Hyundai,Celoster,66,30
-123,2006,Lexus,Sc430,66,31
-1051,2006,Acura,Tsx,66,32
-218,2010,Chevy,Camaro,64,33
-41,2012,Acura,Tsx,64,34
-158,2007,Nissan,350z,64,35
-48,2015,Acura,TLX,62,36
-21,2009,Subaru,WRX,62,37
-23,1998,Subaru,Legacy,62,38
-12,1990,Nissan,240,62,39
-38,2017,Hyundai,"Elantra sport",62,40
-35,2016,Honda,Civic,60,41
-53,2013,Subaru,WRX,60,42
-142,1993,Toyota,Supra,58,43
-110,2011,Toyota,Camry,58,44
-156,2014,Volkswagen,Gli,56,45
-115,2001,Honda,Crv,56,46
-43,2011,Toyota,"4 Runner",54,47
-37,2015,Subaru,Sti,54,48
-137,2017,Ford,"Focus rs",54,49
-6,2016,Volkswagen,"Golf r",54,50
-134,2013,Subaru,WRX,52,51
-225,2016,Acura,TLX,52,52
-51,2015,Subaru,WRX,50,53
-5,2003,Acura,Rsx,50,54
-170,2014,Chevy,Cruze,50,55
-189,2012,Toyota,"Fj cruiser",50,56
-88,2008,Honda,Accord,48,57
-104,2014,Honda,"Civic si",48,58
-52,2007,Mazda,"Speed 3",48,59
-211,2004,Acura,Tsx,48,60
-232,2018,Subaru,WRX,46,61
-8,1991,Nissan,Skyline,44,62
-140,1995,Mitsu,Evo8,44,63
-Showcar,2014,Nissan,Gtr,44,64
-121,2012,Acura,TL,44,65
-118,1993,Honda,Civic,44,66
-9,1996,Nissan,240,44,67
-122,2011,Infiniti,M37s,44,68
-85,2017,Honda,Accord,42,69
-153,2017,Subaru,Brz,42,70
-56,2009,Volkswagen,Jetta,42,71
-49,1997,Acura,Integra,42,72
-45,2006,Acura,TL,42,73
-222,2015,Lexus,Is250,40,74
-207,1993,Honda,"Civic eG",40,75
-176,2014,Mitsu,Lancer,40,76
-44,2018,Honda,"Civic si",40,77
-19,2001,Mitsu,Evo7,40,78
-20,2009,Infiniti,G37,38,79
-99,2014,Honda,"Civic si",38,80
-145,1990,Volkswagen,Gti,38,81
-179,2004,Volkswagen,R32,38,82
-18,2015,Audi,S3,38,83
-200,2016,Subaru,WRX,36,84
-162,2014,Nissan,370z,36,85
-78,2015,Mazda,6,36,86
-10,2001,Nissan,S15,34,87
-17,2016,Mercedes,C43,34,88
-4341,1992,Nissan,Rps13,32,89
-46,2008,Volkswagen,R32,32,90
-24,2013,Subaru,BRZ,32,91
-7,2014,Nissan,Sentra,30,92
-181,2003,Volkswagen,Gti,30,93
-120,2014,Ford,"Focus st",30,94
-92,2017,Hyundai,"Elantra sport",30,95
-11,1991,Nissan,Skyline,30,96
-59,2012,Volkswagen,Golf,28,97
-116,2008,Audi,A4,28,98
-238,1982,Volkswagen,Rabbit,28,99
-144,2016,Volkswagen,Gti,28,100
-14,1990,Nissan,Skyline,26,101
-98,2012,Mercedes,C63,26,102
-114,2010,Volkswagen,Gti,26,103
-219,2016,Ford,"Focus rs",26,104
-141,1993,Mazda,Miata,26,105
-187,2007,Subaru,Legacy,26,106
-242,2014,Nissan,Maxima,26,107
-2,2016,Bmw,M2,24,108
-130,2016,Honda,"Civic si",24,109
-241,2007,Toyota,Camry,24,110
-22,2007,Honda,Civic,24,111
-81,2016,Volkswagen,GTI,24,112
-163,2013,Mitsu,Ralliart,22,113
-93,2005,Acura,TL,22,114
-150,2006,Nissan,350z,22,115
-100,2006,Volvo,S60r,22,116
-172,2014,Bmw,4,22,117
-167,2016,Ford,Mystang,20,118
-230,2004,Acura,Tsx,20,119
-182,2012,Volkswagen,Cc,20,120
-235,2013,Scion,Frs,20,121
-79,1993,Mazda,Miata,18,122
-226,2008,Honda,Accord,18,123
-34,2010,Honda,Fit,18,124
-183,2005,Volkswagen,Jetta,16,125
-89,2014,Honda,"Civic si",16,126
-Vip,2008,Volkswagen,Gli,16,127
-159,2013,Hyundai,"Gen coupe",14,128
-67,2015,Subaru,Sti,14,129
-108,2013,Audi,S4,14,130
-220,2004,Audi,A4,14,131
-186,2012,Volkswagen,Gli,14,132
-4,2007,Honda,Civic,14,133
-193,2014,Nissan,Ssntra,14,134
-177,2005,Volkswagen,"Jetta gli",12,135
-95,2004,Infiniti,G35,12,136
-76,2005,Subaru,Sti,12,137
-68,2013,Nissan,Altima,10,138
-102,2015,Honda,Accord,10,139
-111,2007,Bmw,328i,10,140
-243,2008,Toyota,Matrix,10,141
-16,2008,Nissan,350z,10,142
-96,2017,Volkswagen,Gti,10,143
-138,1990,Mazda,Miata,10,144
-94,2004,Volkswagen,Gti,10,145
-190,1995,Lexus,Sc300,10,146
-237,1987,Volkswagen,Jetta,10,147
-184,2010,Volkswagen,Cc,8,148
-42,2001,Dodge,Viper,8,149
-28,1995,Bmw,318xi,8,150
-185,2013,Volkswagen,Jett,8,151
-74,2015,Honda,Accord,8,152
-69,2018,Subaru,WRX,8,153
-86,1996,Volkswagen,Jetta,8,154
-1,2012,Subaru,WRX,6,155
-75,2012,Subaru,WRX,6,156
-212,2001,Lexus,Is300,6,157
-40,2007,Subaru,Legacy,6,158
-71,2008,Acura,TL,6,159
-64,2004,Subaru,Forester,6,160
-66,2010,Volkswagen,Gti,4,161
-72,2016,Honda,"Civic si",4,162
-174,2006,Acura,Rsx,4,163
-197,2010,Audi,A4,2,164
-101,2014,Honda,Civic,0,165
-0,2015,Chevy,Camaro,0,166
-70,2014,Honda,Civic,0,167
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ jcl[K[K[Kclear
-[3;J[H[2J]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ git push -a[KA
-error: unknown switch `A'
-usage: git push [<options>] [<repository> [<refspec>...]]
-
-    -v, --verbose         be more verbose
-    -q, --quiet           be more quiet
-    --repo <repository>   repository
-    --all                 push all refs
-    --mirror              mirror all refs
-    --delete              delete refs
-    --tags                push tags (can't be used with --all or --mirror)
-    -n, --dry-run         dry run
-    --porcelain           machine-readable output
-    -f, --force           force updates
-    --recurse-submodules[=<check>]
-                          control recursive pushing of submodules
-    --thin                use thin pack
-    --receive-pack <receive-pack>
-                          receive pack program
-    --exec <receive-pack>
-                          receive pack program
-    -u, --set-upstream    set upstream for git pull/status
-    --progress            force progress reporting
-    --prune               prune locally removed refs
-    --no-verify           bypass pre-push hook
-    --follow-tags         push missing but relevant tags
-
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ git add -A
-warning: The behavior of 'git add --all (or -A)' with no path argument from a
-subdirectory of the tree will change in Git 2.0 and should not be used anymore.
-To add content for the whole tree, run:
-
-  git add --all :/
-  (or git add -A :/)
-
-To restrict the command to the current directory, run:
-
-  git add --all .
-  (or git add -A .)
-
-With the current Git version, the command is restricted to the current directory.
-
-]0;Adnaan.Syed20@sol26:~/cisc3140/lab_2[Adnaan.Syed20@sol26 lab_2]$ git comm[K[K[K[K[K[K[K[Kgit add --all
-warning: The behavior of 'git add --all (or -A)' with no path argument from a
-subdirectory of the tree will change in Git 2.0 and should not be used anymore.
-To add content for the whole tree, run:
-
-  git add --all :/
-  (or git add -A :/)
-
-To restrict the command to the current directory, run:
-
-  git add --all .
-  (or git add 
+sqlite> .schema orderedScores
+CREATE TABLE orderedScores(
+  Car_ID INT,
+  Year INT,
+  Make TEXT,
+  Model TEXT,
+  Scores INT,
+  Rank INT
+);
+sqlite> SELECT * O[Kord[K[K[K[K[K[K[K[K[K[K[K[K.headers on
+sqlite> .mode column
+sqlite> SELECT * FROM orderedScores;
+Car_ID      Year        Make        Model       Scores      Rank      
+----------  ----------  ----------  ----------  ----------  ----------
+128         2010        Infiniti    G37         128         1         
+124         2015        Jeep        Wrangler    124         2         
+15          2014        Audi        S4          120         3         
+113         2012        Acura       Tsx sportw  116         4         
+83          2014        Honda       Accord      112         5         
+112         2008        Acura       TL          110         6         
+65          2009        Honda       Fit         106         7         
+50          2015        Acura       TLX         102         8         
+31          2007        Honda       Fit         102         9         
+91          2010        Mitsu       Lancer      102         10        
+216         2007        Chrystler   300         96          11        
+228         2010        Nissan      370         92          12        
+175         2006        Honda       Civic       92          13        
+126         2010        Volkswagen  Eos         92          14        
+13          2016        Honda       Civic 1.5t  92          15        
+127         2013        Acura       Tsx         86          16        
+63          2010        Honda       Civic       86          17        
+161         2012        Nissan      370z        84          18        
+3           2011        Nissan      370         84          19        
+180         2011        Volkswagen  Gti         82          20        
+57          2015        Scion       Frs         80          21        
+25          2012        Mercedes    C250        78          22        
+106         2007        Acura       Tl type s   78          23        
+36          2016        Subaru      WRX         74          24        
+178         2009        Honda       Oddesy      72          25        
+39          2011        Honda       Civic       72          26        
+103         2010        Acura       Tsx         72          27        
+84          2012        Mercedes    Cl63amg     70          28        
+33          2015        Subaru      Sti         68          29        
+30          2012        Hyundai     Celoster    66          30        
+123         2006        Lexus       Sc430       66          31        
+1051        2006        Acura       Tsx         66          32        
+218         2010        Chevy       Camaro      64          33        
+41          2012        Acura       Tsx         64          34        
+158         2007        Nissan      350z        64          35        
+48          2015        Acura       TLX         62          36        
+21          2009        Subaru      WRX         62          37        
+23          1998        Subaru      Legacy      62          38        
+12          1990        Nissan      240         62          39        
+38          2017        Hyundai     Elantra sp  62          40        
+35          2016        Honda       Civic       60          41        
+53          2013        Subaru      WRX         60          42        
+142         1993        Toyota      Supra       58          43        
+110         2011        Toyota      Camry       58          44        
+156         2014        Volkswagen  Gli         56          45        
+115         2001        Honda       Crv         56          46        
+43          2011        Toyota      4 Runner    54          47        
+37          2015        Subaru      Sti         54          48        
+137         2017        Ford        Focus rs    54          49        
+6           2016        Volkswagen  Golf r      54          50        
+134         2013        Subaru      WRX         52          51        
+225         2016        Acura       TLX         52          52        
+51          2015        Subaru      WRX         50          53        
+5           2003        Acura       Rsx         50          54        
+170         2014        Chevy       Cruze       50          55        
+189         2012        Toyota      Fj cruiser  50          56        
+88          2008        Honda       Accord      48          57        
+104         2014        Honda       Civic si    48          58        
+52          2007        Mazda       Speed 3     48          59        
+211         2004        Acura       Tsx         48          60        
+232         2018        Subaru      WRX         46          61        
+8           1991        Nissan      Skyline     44          62        
+140         1995        Mitsu       Evo8        44          63        
+Showcar     2014        Nissan      Gtr         44          64        
+121         2012        Acura       TL          44          65        
+118         1993        Honda       Civic       44          66        
+9           1996        Nissan      240         44          67        
+122         2011        Infiniti    M37s        44          68        
+85          2017        Honda       Accord      42          69        
+153         2017        Subaru      Brz         42          70        
+56          2009        Volkswagen  Jetta       42          71        
+49          1997        Acura       Integra     42          72        
+45          2006        Acura       TL          42          73        
+222         2015        Lexus       Is250       40          74        
+207         1993        Honda       Civic eG    40          75        
+176         2014        Mitsu       Lancer      40          76        
+44          2018        Honda       Civic si    40          77        
+19          2001        Mitsu       Evo7        40          78        
+20          2009        Infiniti    G37         38          79        
+99          2014        Honda       Civic si    38          80        
+145         1990        Volkswagen  Gti         38          81        
+179         2004        Volkswagen  R32         38          82        
+18          2015        Audi        S3          38          83        
+200         2016        Subaru      WRX         36          84        
+162         2014        Nissan      370z        36          85        
+78          2015        Mazda       6           36          86        
+10          2001        Nissan      S15         34          87        
+17          2016        Mercedes    C43         34          88        
+4341        1992        Nissan      Rps13       32          89        
+46          2008        Volkswagen  R32         32          90        
+24          2013        Subaru      BRZ         32          91        
+7           2014        Nissan      Sentra      30          92        
+181         2003        Volkswagen  Gti         30          93        
+120         2014        Ford        Focus st    30          94        
+92          2017        Hyundai     Elantra sp  30          95        
+11          1991        Nissan      Skyline     30          96        
+59          2012        Volkswagen  Golf        28          97        
+116         2008        Audi        A4          28          98        
+238         1982        Volkswagen  Rabbit      28          99        
+144         2016        Volkswagen  Gti         28          100       
+14          1990        Nissan      Skyline     26          101       
+98          2012        Mercedes   
