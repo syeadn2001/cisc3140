@@ -37,7 +37,7 @@ o A field that shows the ‘end’ or the final timestamp of judging for the day
 
 ## How to Run
 
-There are no dependencies required for this project. To run this Lab:
+**Dependencies: SQLite 3.30 or higher is required for this project**
 
 1. Clone the repo into your local system. 
 2.  Run  `make lab2`  in the root directory (in the  `cisc3140`  folder)
