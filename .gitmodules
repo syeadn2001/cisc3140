@@ -4,3 +4,6 @@
 [submodule "lab_2/data_lab2"]
 	path = lab_2/data_lab2
 	url = https://gist.github.com/katychuang/d66a59b6db4e59c16efd4c42ad411f8e
+[submodule "lab_4/data_lab4"]
+	path = lab_4/data_lab4
+	url = https://gist.github.com/katychuang/d66a59b6db4e59c16efd4c42ad411f8e
