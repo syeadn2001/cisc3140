@@ -1,0 +1,15 @@
+{
+  "name": "lab_5",
+  "version": "1.0.0",
+  "description": "\"Creating a front end with React.js to build upon the server we built in Lab 4\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Adnaan Syed",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "sqlite3": "^5.0.8"
+  }
+}
