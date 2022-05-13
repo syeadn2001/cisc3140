@@ -23,13 +23,8 @@ Created a full stack application
 After cloning the project repository, you must  run the Make file, connect to both the backend server, and also the frontend application.
 
 1. To run the make file, just run `` make `` on your terminal.
-2. To make connecting to the backend easier, I translocated the files to Lab 5. To connect to the backend, cd into the server folder & run the following code: 
-
-```
-npm install 
-npm start
-```
-
+2. To connect to the back end, please return to lab_4's directory, which 
+contains the information to properly connect to the backend.
 3. To connect to the frontend, cd into the client folder & run the following code: 
 
 ```
