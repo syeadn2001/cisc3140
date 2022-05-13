@@ -43,7 +43,7 @@ Mods_WIP INT,
 Mods_Overall INT
 );
 
-.import data_lab5/data.csv csvData
+.import ../data_lab5/data.csv csvData
 
 .mode column
 
