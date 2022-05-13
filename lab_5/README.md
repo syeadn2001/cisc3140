@@ -45,7 +45,9 @@ npm start
 
 ## Storyboarding
 
-**Because my website is an SPA, drawing a complex storyboard seemed frivolous. Detailed below is how users would interact with my webpage.**
+**Because my website is an SPA, drawing a complex storyboard seemed frivolous. Detailed below is how users would interact with my webpage. I have also included a gif of my SPA**
+
+<img src = "./project.gif" alt = "Gif of my Project">
 
 -   View the entire database: Click the "See All Data" button
 -   View the Cars and their info: Click the "See All Cars" button
