@@ -9,7 +9,7 @@ Created a full stack application
 * Frond-End: Bootstrap & React.js
 
 ## Dependencies (installed by Node)
--   react
+- react
 - express
 - sqlite3
 
@@ -22,10 +22,9 @@ Created a full stack application
 
 After cloning the project repository, you must  run the Make file, connect to both the backend server, and also the frontend application.
 
-1. To run the make file, just run `` make `` on your terminal.
-2. To connect to the back end, please return to lab_4's directory, which 
+1. To connect to the back end, please return to lab_4's directory, which 
 contains the information to properly connect to the backend.
-3. To connect to the frontend, cd into the client folder & run the following code: 
+2. To connect to the frontend, cd into the client folder & run the following code: 
 
 ```
 npm install 
