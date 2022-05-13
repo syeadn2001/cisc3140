@@ -26,13 +26,17 @@ app.get("/", (req, res) => {
     res.send(`<b>This is the root endpoint for Adnaan Syed's Lab 4`);
 });
 
+
+
 //Display the entire raw database
 app.get("/api/all", (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     var sqlScript = "select * from csvData"
     var params = []
     db.all(sqlScript, params, (err, rows) => {
         if (err) {
             res.status(400).json({ "error": err.message });
+            console.log("error on server side")
             return;
         }
         res.json({
@@ -43,6 +47,7 @@ app.get("/api/all", (req, res) => {
 });
 
 app.get("/api/cars", (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     var sqlScript = "select * from Cars";
     var params = []
     db.all(sqlScript, params, (err, rows) => {
@@ -57,6 +62,7 @@ app.get("/api/cars", (req, res) => {
     })
 })
 app.get("/api/owners", (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     var sqlScript = "select * from Owners"
     var params = []
     db.all(sqlScript, params, (err, rows) => {
@@ -89,6 +95,7 @@ app.get("/api/scores", (req, res) => {
 
 //Selecting a single recored based off their car id
 app.get("/api/cars/:carid", (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     var sqlScript = "select * from csvData where Car_ID = ?"
     var params = [req.params.carid]
     db.all(sqlScript, params, (err, rows) => {
@@ -105,6 +112,7 @@ app.get("/api/cars/:carid", (req, res) => {
 
 //selecting a single owner based off their car id
 app.get("/api/owners/:carid", (req, res, next) => {
+    res.set('Access-Control-Allow-Origin', '*');
     var sql = "select * from Owners where Car_ID = ?"
     var params = [req.params.carid]
     db.all(sql, params, (err, rows) => {
