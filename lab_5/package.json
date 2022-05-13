@@ -4,6 +4,7 @@
   "description": "\"Creating a front end with React.js to build upon the server we built in Lab 4\"",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Adnaan Syed",

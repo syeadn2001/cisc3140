@@ -1,0 +1,28 @@
+* {
+  text-align: center;
+  background-color: white;
+}
+
+
+img {
+  margin-bottom: 20px;
+}
+
+.title {
+  color: white;
+}
+
+.topButton {
+  margin-bottom: 10px;
+  margin-right: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.buttons{
+  margin-top: 20px;
+}
+.record {
+  border: 3px solid black;
+  margin-bottom: 10px;
+}
