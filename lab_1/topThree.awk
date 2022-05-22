@@ -1,4 +1,4 @@
-FNR > 3 {
+FNR > 2 {
 	fileName = $5""
 	dir = sprintf("%s/%s", "cars", fileName)
 		
