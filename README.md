@@ -1,6 +1,6 @@
 # cisc3140
-Repository for CISC 3140 class
-Throughout this class, we learned how to create a full-stack application, and learned the necessary technologies and paradigms that fall into it. The full-stack application we created was 
+- Repository for CISC 3140 class
+- Throughout this class, we learned how to create a full-stack application, and learned the necessary technologies and paradigms that fall into it. The full-stack application we created was 
 
 ## Lab 1
 - We learned and applied **AWK** Scripts to a data.csv file we received, and practiced filtering and manipulating raw data to create the instructed data frames.
