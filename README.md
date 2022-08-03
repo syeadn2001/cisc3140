@@ -1,6 +1,7 @@
 # cisc3140
 - Repository for CISC 3140 class
 - Throughout this class, we learned how to create a full-stack application, and learned the necessary technologies and paradigms that fall into it. Given a CSV file regarding Car Contest data, we learned how to create a database containing filtered tables of that data, a RESTful api server, and a pretty front-end.
+- **For website visual, please visit Lab 5**
 
 ## Lab 1
 - We learned and applied **AWK** Scripts to a data.csv file we received, and practiced filtering and manipulating raw data to create the instructed data frames.
